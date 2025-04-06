@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://d00838.github.io/Donate-to-Gaza/sitemap.xml

@@ -1,0 +1,184 @@
+body {
+    font-family: 'Cairo', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f4f6;
+    color: #222;
+}
+
+header {
+    background-color: #1e293b;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+nav {
+    background-color: #334155;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.75rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #facc15;
+}
+
+.hero {
+    background: url('https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg') center/cover no-repeat;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(0 239 255);
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px black;
+}
+
+main {
+    padding: 2rem;
+}
+
+.donate-button {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    background-color: #dc2626;
+    color: white;
+    padding: 1rem 1.2rem;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#donation-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: none;
+    z-index: 1001;
+    width: 90%;
+    max-width: 400px;
+}
+
+#donation-popup h3 {
+    margin-top: 0;
+    color: #dc2626;
+    font-size: 1.5rem;
+}
+
+#donation-popup code {
+    background-color: #f1f5f9;
+    padding: 6px 10px;
+    display: block;
+    margin-bottom: 10px;
+    direction: ltr;
+    font-size: 1rem;
+}
+
+footer {
+    background-color: #1e293b;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+article {
+    background-color: white;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 1rem;
+    object-fit: cover;
+}
+
+.img-caption {
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.asd {
+    width: 300px;
+}
+
+.as {
+    width: 300px;
+}
+
+.az {
+    width: 300px;
+}
+
+.we {
+    position: relative;
+    top: 26px;
+    color: #1d58ff;
+    right: -4px;
+}
+
+.h3all {
+    position: relative;
+    top: -35px;
+}
+
+
+
+.close-btn {
+    position: absolute;
+    top: -23px;
+    left: 16px;
+    font-size: 48px;
+    font-weight: bold;
+    color: #dc2626;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: black;
+}
+
+.scroll-top-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #1e293b;
+    color: white;
+    border: none;
+    padding: 12px 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    transition: color 0.3s ease;
+}
+
+.scroll-top-btn:hover i {
+    color: #facc15;
+    /* لون ذهبي عند التحويم */
+}
