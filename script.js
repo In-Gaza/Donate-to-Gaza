@@ -1,11 +1,7 @@
-
 function toggleDonationPopup() {
     const popup = document.getElementById('donation-popup');
     popup.classList.toggle('active');
 }
-
-
-
 
 function copyText(elementId) {
     const text = document.getElementById(elementId).innerText;
@@ -15,6 +11,3 @@ function copyText(elementId) {
         alert('❌ فشل في النسخ');
     });
 }
-
-
-
