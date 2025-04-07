@@ -1,8 +1,11 @@
 
 function toggleDonationPopup() {
     const popup = document.getElementById('donation-popup');
-    popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+    popup.classList.toggle('active');
 }
+
+
+
 
 function copyText(elementId) {
     const text = document.getElementById(elementId).innerText;
