@@ -379,19 +379,12 @@ footer:hover {
     to {
         opacity: 1;
     }
-}
-
-
-
-
-
-
-
-
-
+    
+}     
 
 /* زر التبرع للجوال */
 .mobile-donate-fixed {
+    
     display: none;
     position: fixed;
     bottom: 20px;
@@ -425,3 +418,4 @@ footer:hover {
         display: none;
     }
 }
+
