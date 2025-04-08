@@ -414,8 +414,24 @@ footer:hover {
         display: block;
     }
 
-    .donate-button {
+    .donate-button { 
         display: none;
     }
 }
+
+
+
+
+@media (max-width: 768px) {
+    nav {
+        padding: 0.3rem;
+        gap: 1rem;
+        font-size: 0.85rem;
+    }
+
+    nav a {
+        padding: 0.2rem 0.5rem;
+    }
+}
+
 
