@@ -8,10 +8,10 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700&display=swap" rel="stylesheet">
-  <meta name="description" content="This site is dedicated to supporting Gaza through donations, rebuilding efforts, and spreading hope. Help now via USDT (TRC20).">
-  <meta name="keywords" content="Donate Gaza, Gaza under attack, Gaza children, Emergency support Gaza, Free Palestine, Gaza siege, Gaza needs help, Rebuild Gaza, Gaza war 2024, Gaza now, Save Gaza, Humanitarian support Palestine, Crypto donation Gaza, Urgent help Gaza, Gaza crisis, Children in Gaza, Gaza donations, Rebuild hope, Aid Gaza, Save Palestine">
+  <meta name="description" content="This site was created to support Gaza, help its people, rebuild homes, and bring happiness through a volunteer team. Donations via USDT (TRC20) are easy and secure. Join us to make a difference.">
+  <meta name="keywords" content="Donate Gaza, Gaza news today, Gaza under attack, Help Gaza now, Gaza war 2024, USDT Gaza donation, Palestine emergency, Save children Gaza, Humanitarian Gaza, Gaza relief, Gaza donations urgent, Donate cryptocurrency Gaza, Gaza food crisis, Gaza airstrikes, Gaza victims, Rebuild Gaza, Emergency Palestine, Gaza needs help, Gaza children fund, Human rights Gaza, Gaza siege, Free Palestine 2024, Voices from Gaza, Crying children Palestine, Humanitarian Gaza Alert, Aid Gaza Today, Crypto to Gaza Fast, Rebuild hope Palestine, No food no shelter Gaza, Urgent crypto donation, Save a Gaza family, Gaza blackout, Children need shelter, Gaza under siege 2024, Emergency support Middle East, Faith and hope Gaza, Save dreams Gaza, Anonymous donation Gaza, Gaza help mission, Crisis relief Palestine, Echoes from Gaza, Families pleading for help, Emergency donations online, Rebuild hearts in Gaza, Digital aid for Gaza, Urgent donations for kids">
   <meta property="og:title" content="Gaza is bleeding… Be the difference | Urgent Support">
-  <meta property="og:description" content="Your donation could be the difference between life and death. Help Gaza now through secure and reliable means.">
+  <meta property="og:description" content="Your donation may be the difference between life and death. Support Gaza now through secure methods.">
   <meta property="og:image" content="https://your-site.com/images/og-image.jpg">
   <meta property="og:url" content="https://d00838.github.io/Donate-to-Gaza/">
   <meta property="og:type" content="website">
@@ -35,17 +35,143 @@
       if (html.lang === 'en') {
         html.lang = 'ar';
         html.dir = 'rtl';
-        location.href = 'index-ar.html'; // صفحة النسخة العربية
+        location.href = 'index-ar.html';
       } else {
         html.lang = 'en';
         html.dir = 'ltr';
-        location.href = 'index.html'; // صفحة النسخة الإنجليزية
+        location.href = 'index.html';
       }
     }
   </script>
 </head>
 <body>
-  <button onclick="switchLanguage()" style="position: fixed; top: 10px; left: 10px; z-index: 9999; padding: 5px 10px; font-weight: bold;">عربي / English</button>
-  <!-- باقي محتوى الموقع هنا -->
+  <button onclick="switchLanguage()" style="position: fixed; top: 10px; right: 10px; z-index: 9999; padding: 6px 12px; font-weight: bold; border-radius: 5px; border: none; background: #2563eb; color: white; cursor: pointer;">عربي / English</button>
+  <header>
+    <h1>🇵🇸 For Gaza - Support & Aid</h1>
+  </header>
+  <div style="background-color:#fef3c7; color:#b91c1c; padding: 1rem; font-weight:bold; text-align: center; font-size: 1.2rem;">
+    🕊️ Every donation can make the difference between a child living… or not.
+  </div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#articles">Articles</a>
+    <a href="#images">Photos from Gaza</a>
+    <a href="#donate">Donate</a>
+    <div class="donation-quotes-container">
+      <p class="donation-quote" id="quote-text">💔 Every minute a child is lost… Every second, your hand could save them.</p>
+    </div>
+    <script>
+      const quotes = [
+        "💔 Every minute a child is lost… Every second, your hand could save them.",
+        "🧸 Gaza's children don’t know safety… but they know we are with them.",
+        "🕯️ The darkness in Gaza isn’t just power outage… it’s fading hope.",
+        "🍞 In Gaza, bread isn’t food… it’s survival."
+      ];
+      let currentIndex = 0;
+      const quoteEl = document.getElementById("quote-text");
+      setInterval(() => {
+        quoteEl.classList.remove("fade-in");
+        setTimeout(() => {
+          currentIndex = (currentIndex + 1) % quotes.length;
+          quoteEl.innerText = quotes[currentIndex];
+          quoteEl.classList.add("fade-in");
+        }, 300);
+      }, 5000);
+    </script>
+  </nav>
+  <div class="hero">
+    <h3 class="h3all">💔 Gaza is calling... Will you respond?</h3>
+    <p class="we">Gaza is bleeding...</p>
+  </div>
+  <div class="donate-button" onclick="toggleDonationPopup()">
+    ❤️ Donate to Gaza
+    <p style="font-size: 0.75rem; color: #eee;">Click here</p>
+  </div>
+  <div id="donation-popup">
+    <span class="close-btn" onclick="toggleDonationPopup()">×</span>
+    <h3>Ways to Donate:</h3>
+    <strong>💸 Via USDT (TRC20) Network:</strong><br>
+    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
+      <code id="usdt-address"><b>TEtV7tWsQhqcX16DyWPf9Z42vcouN7tvgr</b></code>
+      <i class="fas fa-copy" onclick="copyText('usdt-address')" style="cursor:pointer; color:#2563eb;" title="Copy Address"></i>
+    </div>
+    <p style="font-size: 0.95rem; color: #444; line-height: 1.6; font-weight: bold;">
+      💔 Your donation may save a child, aid the injured, or bring warmth to a family living in ruins...
+    </p>
+  </div>
+  <main>
+    <section id="articles">
+      <article>
+        <h2>Humanitarian Crisis in Gaza</h2>
+        <p>The humanitarian situation in Gaza is a sleepless tragedy. 💔 In every corner, a child searches for hope, a mother wipes her tears to comfort her children, and families live under rubble hoping for mercy. 🚨 Medicine is scarce, water is contaminated, electricity is cut, and bread is a dream. Gaza is not okay… hearts beat there, but life is taken every moment. Your donation is not just support, it’s life given anew.</p>
+      </article>
+      <article>
+        <h2>Why You Should Donate?</h2>
+        <p>Every donation to Gaza helps provide food, water, medicine, and shelter for displaced families. No donation is too small. Every dollar can save a life.</p>
+      </article>
+      <article>
+        <h2>🏚️ Destruction and Lost Shelter:</h2>
+        <p>Homes are no longer shelters… but ruins holding broken dreams. Entire families sleep in the open, protected only by hope from the cold of abandonment.</p>
+      </article>
+      <article>
+        <h2>💊 Health and Medicine:</h2>
+        <p>The wounded are without medicine, the sick without treatment… hospitals collapse silently. A child cries in pain, unheard, because pain has become too familiar.</p>
+      </article>
+      <article>
+        <h2>Think About What Your Donation Can Do</h2>
+        <p>🕊️ Did you know a small donation from you could stop a cry of pain, or restore sight to a child hit by shrapnel? 💡 Don’t hesitate… your donation today could turn sorrow into joy.</p>
+      </article>
+      <article>
+        <h2>🍞 Food and Water:</h2>
+        <p>Mothers fight for a bite of bread in Gaza. Contaminated water is the only option, and hunger is a constant guest that never leaves.</p>
+      </article>
+      <article>
+        <h2>What is Gaza Suffering From?</h2>
+        <p>Gaza suffers from a suffocating siege for years...</p>
+      </article>
+      <article>
+        <h2>A Trusted Platform to Support Gaza</h2>
+        <p>📢 This is not just a platform, it’s a humanitarian bridge between your hearts and Gaza’s pulse. 💚 We ensure your donations reach the true needy… to a trembling child, or a mother waiting for bread and medicine under the rubble.</p>
+      </article>
+    </section>
+    <section id="images">
+      <h2>Images from Reality in Gaza</h2>
+      <div><img src="asd.jpg" alt="Destruction in Gaza" class="az">
+        <div class="img-caption">💔 The photo reflects the pain and destruction Gaza has suffered</div>
+      </div>
+      <div><img src="hjk.jpg" alt="Reconstruction" class="az">
+        <div class="img-caption">🔨 Rebuilding our nation despite the destruction</div>
+      </div>
+      <div><img src="rty.jpg" alt="Feeding people" class="az">
+        <div class="img-caption">🍲 Feeding people in the face of deadly famine</div>
+      </div>
+      <div><img src="vbn.jpg" alt="Rebuilding" class="az">
+        <div class="img-caption">Young people build... and you support</div>
+      </div>
+      <div><img src="fgh.jpg" alt="Bread aid" class="az">
+        <div class="img-caption">Even the simplest things… become distant dreams</div>
+      </div>
+      <div><img src="opq.jpg" alt="Father carrying daughter" class="az">
+        <div class="img-caption">Would you accept your daughter or sister to die homeless and cold?</div>
+      </div>
+      <div><img src="bnm.jpg" alt="Crying child" class="az">
+        <div class="img-caption">Childhood assassinated before it began… Can you bring them some safety?</div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>This site is to support the people of Gaza through every possible means. Don’t forget to share it.</p>
+    <p>🇵🇸 Free Palestine ✊</p>
+    <p>🕊️ "You may only have your heart… but it’s the most precious thing Gaza needs today."</p>
+    <p>💬 "Your voice may not be heard in battle… but your donation echoes as unforgettable hope."</p>
+  </footer>
+  <button class="scroll-top-btn" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+  <div class="mobile-donate-fixed" onclick="toggleDonationPopup()">
+    ❤️ Donate Now
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
+
