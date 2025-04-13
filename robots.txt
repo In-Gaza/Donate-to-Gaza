@@ -1,3 +1,5 @@
 User-agent: *
-Allow: /
-Sitemap: https://d00838.github.io/Donate-to-Gaza/sitemap.xml
+Disallow: /donate/
+Disallow: /private/
+Allow: /public/
+Sitemap: https://in-gaza.github.io/sitemap.xml
