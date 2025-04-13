@@ -36,8 +36,41 @@
         gtag('js', new Date());
         gtag('config', 'G-H5TEWTP9M6');
     </script>
+    <script>
+// Function to fetch XML data
+function loadXMLDoc(filename) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            displayXML(this);
+        }
+    };
+    xhttp.open("GET", filename, true);
+    xhttp.send();
+}
+
+// Function to display XML data
+function displayXML(xml) {
+    var xmlDoc = xml.responseXML;
+    var content = xmlDoc.getElementsByTagName("item");
+    var htmlContent = "<ul>";
+
+    for (var i = 0; i < content.length; i++) {
+        htmlContent += "<li>" + content[i].childNodes[0].nodeValue + "</li>";
+    }
+
+    htmlContent += "</ul>";
+    document.getElementById("content").innerHTML = htmlContent;
+}
+
+// Call the function to load the XML
+loadXMLDoc("data.xml"); // Assuming data.xml is your XML file
+</script>
+
 
 </head>
+    <a href="data.xml" target="_blank">View XML Data</a>
+
 <div id="modal-root"></div>
 
 <body id="top">
