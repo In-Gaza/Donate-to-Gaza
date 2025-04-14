@@ -27,19 +27,18 @@ gtag('js', new Date());
 gtag('config', 'G-H5TEWTP9M6');
 
 function toggleDonationPopup() {
-  const popup = document.getElementById('donation-popup');
-  popup.classList.toggle('active');
+    const popup = document.getElementById('donation-popup');
+    popup.classList.toggle('active');
 }
 
 function copyText(elementId) {
-  const text = document.getElementById(elementId).innerText;
-  navigator.clipboard.writeText(text).then(() => {
-    alert('✅ The text has been copied:::' + text);
-  }).catch(() => {
-    alert('❌ Copy failed. Select the address and copy it yourself:');
-  });
+    const text = document.getElementById(elementId).innerText;
+    navigator.clipboard.writeText(text).then(() => {
+        alert('✅ Address copied:\n' + text);
+    }).catch(() => {
+        alert('❌ Copy failed. Please try again.');
+    });
 }
-
 
 
 
