@@ -435,7 +435,6 @@ body {
     transition: transform 0.2s ease;
 }
 
-/* Hover effect for donate button */
 .donate-button:hover {
     background: #b91c1c;
     transform: scale(1.05);
@@ -459,7 +458,7 @@ body {
     transition: all 0.4s ease;
 }
 
-/* Active popup visibility */
+/* Active popup */
 #donation-popup.active {
     display: block;
     transform: translate(-50%, -50%) scale(1);
@@ -477,27 +476,53 @@ body {
     cursor: pointer;
 }
 
-/* Address section */
+/* Copy Button */
+.copy-btn {
+    margin-top: 10px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+}
+
+.copy-btn:hover {
+    background-color: #1d4ed8;
+}
+
+/* Address Section */
 .address-section {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 10px;
-    margin-bottom: 12px;
+    margin-top: 10px;
     font-size: 1rem;
+    background-color: #f3f4f6;
+    padding: 10px;
+    border-radius: 8px;
 }
 
-/* Copy icon for the address */
+/* Copy Icon */
 .copy-icon {
     cursor: pointer;
     color: #2563eb;
+    font-size: 1.3rem;
 }
 
-/* Title and Description Text */
+/* Donation text */
 .donation-text {
     font-size: 1rem;
     color: #444;
     line-height: 1.6;
     font-weight: bold;
+    margin-top: 1rem;
+    text-align: center;
 }
 
 /* USDT Text */
@@ -506,6 +531,30 @@ body {
     font-weight: bold;
     color: #e11d48;
     margin-left: 10px;
+}
+
+/* Responsive popup */
+@media (max-width: 480px) {
+    .donate-button {
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+        border-radius: 50%;
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+    }
+
+    .donate-button p {
+        display: none;
+    }
+
+    .copy-btn {
+        font-size: 0.9rem;
+    }
+
+    #donation-popup {
+        padding: 1.5rem 1rem;
+    }
 }
 
 body {
