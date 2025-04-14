@@ -100,26 +100,34 @@ loadXMLDoc("data.xml"); // Assuming data.xml is your XML file
 
 
 
-    <div class="donate-button" onclick="toggleDonationPopup()">
-        ❤️ Donate now
-        <p style="font-size: 0.75rem; color: #eee;">Click here</p>
+<!-- Donation Button -->
+<div class="donate-button" onclick="toggleDonationPopup()">
+    ❤️ Donate now
+    <p style="font-size: 0.75rem; color: #eee;">Click here</p>
+</div>
+
+<!-- Donation Popup -->
+<div id="donation-popup">
+    <span class="close-btn" onclick="toggleDonationPopup()">×</span>
+    <h3 style="margin-bottom: 0.5rem;">Ways to Donate:</h3>
+
+    <div class="copy-section">
+        <strong>💸 Via USDT (TRC20):</strong>
+        <span class="usdt-text">USDT</span>
     </div>
 
-    <div id="donation-popup">
-        <span class="close-btn" onclick="toggleDonationPopup()">×</span>
-        <h3>Ways to Donate:</h3>
-        <div style="display: flex; align-items: center; justify-content: center;">
-            <strong>💸 Via USDT (TRC20) Network:</strong>
-            <span class="usdt-text">USDT</span>
-        </div>
-        <div class="address-section">
-            <code id="usdt-address"><b>TEtV7tWsQhqcX16DyWPf9Z42vcouN7tvgr</b></code>
-            <i class="fas fa-copy copy-icon" onclick="copyText('usdt-address')" title="Copy Address"></i>
-        </div>
-        <p class="donation-text">
-            💔 Be generous, perhaps your generosity will save us...
-        </p>
+    <div class="address-section">
+        <code id="usdt-address"><b>TEtV7tWsQhqcX16DyWPf9Z42vcouN7tvgr</b></code>
+        <i class="fas fa-copy copy-icon" onclick="copyText('usdt-address')" title="Copy Address"></i>
     </div>
+
+    <!-- New Copy Button -->
+    <button class="copy-btn" onclick="copyText('usdt-address')">📋 Copy the Address</button>
+
+    <p class="donation-text">
+        💔 Be generous, perhaps your generosity will save us...
+    </p>
+</div>
 
 
 
@@ -293,7 +301,31 @@ loadXMLDoc("data.xml"); // Assuming data.xml is your XML file
         <div class="image-description">
             <h3>This is proof of my mother's illness</h3>
             <p>
-                This image shows a long line of people, a sea of displaced souls walking along the coastline. It is a
+      This is more than just a medical report. This is my mother’s battle for her life.
+
+In the image above is a document issued by the Turkish-Palestinian Friendship Hospital, detailing the painful journey of my beloved mother, Sanaa Muhamad Roshdi Redwan, a 47-year-old woman from Gaza. She is a strong, resilient woman—a wife, a mother, and the heart of our family. She never had any history of illness until life took a sudden, devastating turn.
+
+She was diagnosed with locally advanced left breast carcinoma (T3N1M0) after a series of medical investigations, including a biopsy and mammogram in July 2020. Despite her fears, she courageously underwent neoadjuvant chemotherapy with 4 cycles of AC protocol. But the burden of the treatment was too heavy to bear—physically, emotionally, and financially—and she could no longer continue.
+
+In January 2021, doctors performed a total mastectomy. She now carries not just physical scars, but deep emotional wounds. After surgery, she continued her fight with adjuvant radiotherapy. Yet, the challenges haven’t ended. She now awaits the possibility of breast reconstruction surgery, something that would help restore a part of her stolen dignity and confidence.
+
+This report is stamped, signed, and sealed—proof of the suffering, the sacrifice, and the strength. But it is not enough on its own. We need help.
+
+If you are reading this, please know: every contribution, no matter how small, could bring light into our darkest hours. Your support can help give her a chance to heal completely. A chance for a future without pain. A chance to smile again.
+
+🌸 Please, help my mother reclaim her life.
+💔 Her battle is real. Her strength is admirable.
+🙏 And your kindness can be the turning point.
+            </p>
+        </div>
+    </div>
+
+    <div class="image-section">
+        <img src="mashe.jpg" alt="Bread aid" class="az">
+        <div class="image-description">
+            <h3>This is the recurring torrent of human displacement.</h3>
+            <p>
+      This image shows a long line of people, a sea of displaced souls walking along the coastline. It is a
                 visual representation of the constant struggle that has been forced upon us, time and time again. For
                 us, this isn’t just a photograph—it’s a painful memory. We are the ones who have endured this flood of
                 humanity, who have lived through this never-ending cycle of displacement. We’ve been forced to leave our
@@ -310,31 +342,6 @@ loadXMLDoc("data.xml"); // Assuming data.xml is your XML file
                 better life. We believe that, with your support, we can rebuild what has been lost, that we can find
                 peace and stability. Please, stand with us. Your kindness and generosity will light the way toward a
                 future that no longer includes displacement, but home.
-            </p>
-        </div>
-    </div>
-
-    <div class="image-section">
-        <img src="mashe.jpg" alt="Bread aid" class="az">
-        <div class="image-description">
-            <h3>This is the recurring torrent of human displacement.</h3>
-            <p>
-                A mother stands in line, praying that today her children will eat. Bread—the most
-                basic
-                human
-                need—has become a distant dream in Gaza. This image is not just about hunger; it’s
-                about
-                injustice. Imagine explaining to your child why there’s no food again today. Imagine
-                seeing
-                their eyes go dull from starvation. That’s Gaza’s daily reality. Every piece of
-                bread is
-                a
-                triumph against blockade and suffering. By supporting food aid, you offer more than
-                calories—you
-                offer dignity. Help make bread a reality again. Be the reason a child sleeps with a
-                full
-                stomach
-                tonight.
             </p>
         </div>
     </div>
