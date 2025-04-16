@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <sitemap>
-        <loc>https://in-gaza.github.io/Donate-to-Gaza/</loc>
-        <lastmod>2025-04-13</lastmod>
-        <priority>1.0</priority>
-    </sitemap>
-</sitemapindex>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://in-gaza.github.io/Donate-to-Gaza/</loc>
+    <lastmod>2025-04-16</lastmod>
+    <priority>1.0</priority>
+  </url>
+</urlset>
