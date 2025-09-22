@@ -1,6 +1,5 @@
-
         :root {
-            /* ألوان iOS الحديثة */
+            /* iOS Color System */
             --primary: #007AFF;
             --primary-dark: #0056CC;
             --secondary: #5856D6;
@@ -37,42 +36,71 @@
         }
 
         body {
-            font-family: 'Cairo', sans-serif;
-            background-color: var(--background);
+            font-family: 'Inter', sans-serif;
+            background: var(--background);
             color: var(--text-primary);
             line-height: 1.7;
             scroll-behavior: smooth;
             padding: 0;
             overflow-x: hidden;
+            min-height: 100vh;
         }
 
-        /* Header مع تأثير شفافية عند التمرير */
+        /* iOS Style Header with Blur Effect */
         header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            color: var(--text-primary);
+            padding: 1.2rem 1.5rem;
             text-align: center;
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             font-weight: 700;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid var(--border);
             transition: all 0.4s ease;
         }
 
-        header.scrolled {
-            padding: 1rem 1.5rem;
-            font-size: 1.8rem;
-            background: rgba(30, 41, 59, 0.9);
+        .dark-mode header {
+            background: rgba(28, 28, 30, 0.8);
         }
 
-        /* Navigation بتصميم iOS Tab Bar */
+        header.scrolled {
+            padding: 0.8rem 1.5rem;
+            font-size: 1.5rem;
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .dark-mode header.scrolled {
+            background: rgba(28, 28, 30, 0.95);
+        }
+
+        /* Alert Banner */
+        .alert-banner {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #8B4513;
+            padding: 1rem;
+            font-weight: 600;
+            text-align: center;
+            font-size: 1.1rem;
+            margin-top: 70px;
+            box-shadow: 0 2px 10px rgba(255, 165, 0, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.9; }
+            50% { opacity: 1; }
+            100% { opacity: 0.9; }
+        }
+
+        /* iOS Tab Bar Navigation */
         nav {
-            background-color: var(--card-bg);
+            background: var(--card-bg);
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -110,9 +138,10 @@
             transform: translateY(-3px);
         }
 
-        /* Hero Section مع Parallax Effect */
+        /* Hero Section with Parallax */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg') center/cover no-repeat;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), 
+                        url('https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg') center/cover no-repeat;
             height: 70vh;
             display: flex;
             flex-direction: column;
@@ -121,7 +150,7 @@
             color: white;
             text-align: center;
             padding: 2rem;
-            margin-top: 80px;
+            margin-top: 70px;
             position: relative;
             overflow: hidden;
         }
@@ -138,8 +167,8 @@
             z-index: -1;
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
+        .hero h3 {
+            font-size: 2.8rem;
             font-weight: 700;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
@@ -152,100 +181,129 @@
             animation: fadeInUp 1s ease-out 0.3s both;
         }
 
-        /* Cards بتصميم iOS */
-        .card-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+        /* Main Content */
+        main {
             padding: 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .card {
+        /* Article Section with Floating Animation */
+        .gaza-article {
             background: var(--card-bg);
             border-radius: var(--radius);
             box-shadow: var(--shadow);
-            overflow: hidden;
-            transition: var(--transition);
+            padding: 2.5rem 2rem;
+            margin-bottom: 2rem;
+            position: relative;
             border: 1px solid var(--border);
             opacity: 0;
             transform: translateY(30px);
+            transition: all 0.8s ease;
         }
 
-        .card.visible {
+        .gaza-article.visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        .card:hover {
-            transform: translateY(-10px);
+        .gaza-article:hover {
+            transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
 
-        .card-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .card-content {
-            padding: 1.5rem;
-        }
-
-        .card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 0.8rem;
-            color: var(--primary);
-        }
-
-        .card p {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        /* Article Section */
-        .article-section {
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background: var(--card-bg);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border);
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .article-section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .article-section h2 {
-            font-size: 2rem;
+        .gaza-article h1 {
+            font-size: 2.2rem;
             color: var(--primary);
             margin-bottom: 1.5rem;
             padding-bottom: 0.5rem;
             border-bottom: 2px solid var(--border);
         }
 
-        .article-section p {
+        .gaza-article p {
             font-size: 1.1rem;
             line-height: 1.8;
             margin-bottom: 1.5rem;
             color: var(--text-primary);
         }
 
-        /* Donate Button بتصميم iOS */
+        .gaza-icon {
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            width: 80px;
+            height: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            z-index: 2;
+        }
+
+        .gaza-icon:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* Image Sections with 3D Effect */
+        .image-section {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            background: var(--card-bg);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            opacity: 0;
+            transform: translateY(30px) perspective(1000px) rotateX(5deg);
+            transition: all 0.8s ease;
+        }
+
+        .image-section.visible {
+            opacity: 1;
+            transform: translateY(0) perspective(1000px) rotateX(0);
+        }
+
+        .image-section:hover {
+            transform: translateY(-5px) perspective(1000px) rotateX(0);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .image-section img {
+            width: 320px;
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .image-section:hover img {
+            transform: scale(1.03);
+        }
+
+        .image-description {
+            flex: 1;
+            color: var(--text-primary);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .image-description h3 {
+            color: var(--primary);
+            margin-top: 0;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Donate Button with Floating Animation */
         .donate-button {
             position: fixed;
             top: 50%;
             right: 0;
             background: linear-gradient(135deg, var(--success) 0%, #30D158 100%);
             color: white;
-            padding: 1rem 1.5rem;
+            padding: 1.2rem 1.5rem;
             border-top-left-radius: 20px;
             border-bottom-left-radius: 20px;
             font-size: 1.1rem;
@@ -257,6 +315,7 @@
             align-items: center;
             gap: 0.5rem;
             transition: var(--transition);
+            animation: float 3s ease-in-out infinite;
         }
 
         .donate-button:hover {
@@ -264,8 +323,8 @@
             box-shadow: 0 6px 25px rgba(52, 199, 89, 0.6);
         }
 
-        /* Modal بتصميم iOS */
-        .modal {
+        /* Donation Modal with iOS Style */
+        #donation-popup {
             position: fixed;
             top: 0;
             left: 0;
@@ -279,9 +338,10 @@
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
         }
 
-        .modal.active {
+        #donation-popup.active {
             opacity: 1;
             visibility: visible;
         }
@@ -295,30 +355,29 @@
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             transform: scale(0.9);
             transition: all 0.3s ease;
+            position: relative;
         }
 
-        .modal.active .modal-content {
+        #donation-popup.active .modal-content {
             transform: scale(1);
         }
 
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .modal-header h2 {
-            color: var(--primary);
-            font-size: 1.5rem;
-        }
-
         .close-btn {
-            background: none;
-            border: none;
-            font-size: 1.5rem;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2rem;
+            font-weight: bold;
             color: var(--text-secondary);
             cursor: pointer;
+            background: none;
+            border: none;
+            transition: var(--transition);
+        }
+
+        .close-btn:hover {
+            color: var(--danger);
+            transform: scale(1.1);
         }
 
         .address-section {
@@ -329,6 +388,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border: 1px solid var(--border);
         }
 
         .address-section code {
@@ -350,10 +410,26 @@
             align-items: center;
             gap: 0.5rem;
             transition: var(--transition);
+            width: 100%;
+            justify-content: center;
+            margin-top: 1rem;
         }
 
         .copy-btn:hover {
             background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .copy-icon {
+            cursor: pointer;
+            color: var(--primary);
+            font-size: 1.3rem;
+            transition: var(--transition);
+        }
+
+        .copy-icon:hover {
+            color: var(--primary-dark);
+            transform: scale(1.1);
         }
 
         /* Footer */
@@ -366,29 +442,13 @@
             border-top: 1px solid var(--border);
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
+        footer p {
+            margin: 0.5rem 0;
+            font-size: 1rem;
         }
 
         /* Scroll to top button */
-        .scroll-top {
+        .scroll-arrow {
             position: fixed;
             bottom: 80px;
             right: 20px;
@@ -407,14 +467,15 @@
             opacity: 0;
             visibility: hidden;
             transition: var(--transition);
+            text-decoration: none;
         }
 
-        .scroll-top.active {
+        .scroll-arrow.active {
             opacity: 1;
             visibility: visible;
         }
 
-        .scroll-top:hover {
+        .scroll-arrow:hover {
             animation: float 2s infinite;
             background: var(--primary-dark);
         }
@@ -438,24 +499,43 @@
             border: 1px solid var(--border);
         }
 
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
+            .hero h3 {
+                font-size: 2.2rem;
             }
             
             .hero p {
                 font-size: 1.2rem;
             }
             
-            .card-container {
-                grid-template-columns: 1fr;
-                padding: 1rem;
+            .image-section {
+                flex-direction: column;
             }
             
-            .article-section {
-                margin: 1rem;
-                padding: 1.5rem;
+            .image-section img {
+                width: 100%;
             }
             
             nav a span {
@@ -466,6 +546,10 @@
                 font-size: 1.4rem;
                 margin-bottom: 0;
             }
+            
+            .gaza-article, .image-section {
+                padding: 1.5rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -474,16 +558,20 @@
                 margin-top: 70px;
             }
             
-            .hero h1 {
-                font-size: 2rem;
+            .hero h3 {
+                font-size: 1.8rem;
             }
             
             .donate-button {
-                padding: 0.8rem 1rem;
+                padding: 1rem;
                 font-size: 1rem;
             }
             
-            .donate-button span {
+            .donate-button p {
                 display: none;
+            }
+            
+            main {
+                padding: 1rem;
             }
         }
