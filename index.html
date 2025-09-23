@@ -57,6 +57,7 @@
 
 
 <body class="dark-mode-transition">
+
     <!-- Animated Background Particles -->
     <div class="particles">
         <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
@@ -124,108 +125,117 @@
             <h2 style="color: var(--primary); text-align: center; margin: 4rem 0; font-size: 3rem; font-weight: 900;">
                 This Is Our Reality
             </h2>
+    <!-- نافذة عرض الصور -->
+    <div class="image-lightbox" id="imageLightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close" onclick="closeLightbox()">×</span>
+            <img id="lightboxImage" src="" alt="">
+            <div class="lightbox-caption" id="lightboxCaption"></div>
+            <div class="lightbox-nav">
+                <div class="lightbox-prev" onclick="changeImage(-1)">❮</div>
+                <div class="lightbox-next" onclick="changeImage(1)">❯</div>
+            </div>
+        </div>
+    </div>
 
-            <div class="image-gallery">
-                <!-- Image 1: Destroyed Dreams -->
-                <div class="image-card">
-                    <div class="image-container">
-                        <img src="car.jpg" alt="Destroyed family car">
-                        <div class="image-overlay">
-                            <h3>💔 Our Dreams Turned to Dust</h3>
-                        </div>
-                    </div>
-                    <div class="image-content">
-                        <h3>This Car Was Our Hope</h3>
-                        <p>For 8 years, I saved every penny to buy this car. It was going to be our ticket to a better life - to take my children to school, to get my mother to hospital.</p>
-                        <p>In 30 seconds, it became scrap metal. Just like our dreams. The bomb didn't just destroy metal; it destroyed years of sacrifice and hope.</p>
-                        <p style="color: var(--danger); font-weight: 600;">This is what war does - it turns hope into memories.</p>
-                    </div>
-                </div>
-
-                <!-- Image 2: Lost Home -->
-                <div class="image-card">
-                    <div class="image-container">
-                        <img src="home.jpg" alt="Destroyed home">
-                        <div class="image-overlay">
-                            <h3>🏠 Where Memories Used to Live</h3>
-                        </div>
-                    </div>
-                    <div class="image-content">
-                        <h3>This Was Our Sanctuary</h3>
-                        <p>Four generations of our family lived in this home. My grandfather built it with his hands. My children took their first steps here.</p>
-                        <p>Now it's rubble. We managed to save some photos, but we lost the walls that held our laughter, the rooms that witnessed our love.</p>
-                        <p style="color: var(--warning); font-weight: 600;">A home isn't just bricks - it's the container of a family's soul.</p>
-                    </div>
-                </div>
-
-                <!-- Image 3: Temporary Shelter -->
-                <div class="image-card">
-                    <div class="image-container">
-                        <img src="home2.jpg" alt="Makeshift tent">
-                        <div class="image-overlay">
-                            <h3>⛺ Our "New Normal"</h3>
-                        </div>
-                    </div>
-                    <div class="image-content">
-                        <h3>This Tent Is Now Our Home</h3>
-                        <p>Plastic sheets and wooden sticks - this is what we call home now. No privacy, no safety, no dignity.</p>
-                        <p>When it rains, we get wet. When it's cold, we shiver together. My children ask when we can go "home," and I have to pretend I know the answer.</p>
-                        <p style="color: var(--secondary); font-weight: 600;">Dignity is the first casualty of war.</p>
-                    </div>
-                </div>
-
-                <!-- Image 4: Medical Crisis -->
-                <div class="image-card">
-                    <div class="image-container">
-                        <img src="spirir.jpg" alt="Medical documents">
-                        <div class="image-overlay">
-                            <h3>🏥 A Mother's Battle</h3>
-                        </div>
-                    </div>
-                    <div class="image-content">
-                        <h3>Cancer Doesn't Care About War</h3>
-                        <p>This medical report is my mother's death sentence if we can't get help. Breast cancer treatment costs more than we could ever afford.</p>
-                        <p>She smiles through the pain, telling us she's fine. But I see her wince when she moves. I hear her crying at night.</p>
-                        <p style="color: var(--success); font-weight: 600; background: rgba(52, 199, 89, 0.1); padding: 1rem; border-radius: 10px;">
-                            💖 Your donation could give my mother the fighting chance she deserves.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Image 5: Mass Displacement -->
-                <div class="image-card">
-                    <div class="image-container">
-                        <img src="mashe.jpg" alt="Displaced people">
-                        <div class="image-overlay">
-                            <h3>🚶‍♂️ The Walking Wounded</h3>
-                        </div>
-                    </div>
-                    <div class="image-content">
-                        <h3>This Is Us - The Displaced</h3>
-                        <p>That's me in the crowd, carrying everything we own in a small bag. We've been displaced 9 times. Each move takes a piece of our humanity.</p>
-                        <p>We walk for hours, not knowing where we'll sleep, when we'll eat. The children are tired, confused, traumatized.</p>
-                        <p style="color: var(--primary); font-weight: 600;">How many times can a person rebuild their life from nothing?</p>
-                    </div>
-                </div>
-
-                <!-- Image 6: Hunger Crisis -->
-                <div class="image-card">
-                    <div class="image-container">
-                        <img src="eat.jpg" alt="Food distribution">
-                        <div class="image-overlay">
-                            <h3>🍞 The Fight for Food</h3>
-                        </div>
-                    </div>
-                    <div class="image-content">
-                        <h3>This Is What Hunger Looks Like</h3>
-                        <p>That's not a queue - it's a battle for survival. People fighting for a piece of bread, a can of beans.</p>
-                        <p>My children haven't eaten properly in weeks. Their ribs show through their skin. They've stopped asking for toys - now they just ask for food.</p>
-                        <p style="color: var(--danger); font-weight: 800; font-size: 1.2rem;">
-                            ⚡ THIS IS URGENT: Children are dying from malnutrition RIGHT NOW.
-                        </p>
-                    </div>
+    <!-- المحتوى الأصلي مع تعديل الصور -->
+    <div class="image-gallery">
+        <!-- الصورة 1 -->
+        <div class="image-card">
+            <div class="image-container clickable-image" onclick="openLightbox('car.jpg', 'سيارتنا المدمرة - رمز أحلامنا المحطمة')">
+                <img src="car.jpg" alt="Destroyed family car">
+                <div class="zoom-icon">🔍</div>
+                <div class="image-overlay">
+                    <h3>💔 Our Dreams Turned to Dust</h3>
                 </div>
             </div>
+            <div class="image-content">
+                <h3>This Car Was Our Hope</h3>
+                <p>For 8 years, I saved every penny to buy this car. It was going to be our ticket to a better life...</p>
+                <p style="color: var(--danger); font-weight: 600;">انقر على الصورة لمشاهدتها بالحجم الكامل</p>
+            </div>
+        </div>
+
+        <!-- الصورة 2 -->
+        <div class="image-card">
+            <div class="image-container clickable-image" onclick="openLightbox('home.jpg', 'منزلنا المدمر - حيث عشنا ذكرياتنا')">
+                <img src="home.jpg" alt="Destroyed home">
+                <div class="zoom-icon">🔍</div>
+                <div class="image-overlay">
+                    <h3>🏠 Where Memories Used to Live</h3>
+                </div>
+            </div>
+            <div class="image-content">
+                <h3>This Was Our Sanctuary</h3>
+                <p>Four generations of our family lived in this home. My grandfather built it with his hands...</p>
+                <p style="color: var(--warning); font-weight: 600;">انقر على الصورة لمشاهدة التفاصيل</p>
+            </div>
+        </div>
+
+        <!-- الصورة 3 -->
+        <div class="image-card">
+            <div class="image-container clickable-image" onclick="openLightbox('home2.jpg', 'خيمتنا المؤقتة - ملجأنا الجديد')">
+                <img src="home2.jpg" alt="Makeshift tent">
+                <div class="zoom-icon">🔍</div>
+                <div class="image-overlay">
+                    <h3>⛺ Our New Normal</h3>
+                </div>
+            </div>
+            <div class="image-content">
+                <h3>This Tent Is Now Our Home</h3>
+                <p>Plastic sheets and wooden sticks - this is what we call home now. No privacy, no safety, no dignity.</p>
+                <p style="color: var(--secondary); font-weight: 600;">انقر للتكبير ورؤية الظروف</p>
+            </div>
+        </div>
+
+        <!-- الصورة 4 -->
+        <div class="image-card">
+            <div class="image-container clickable-image" onclick="openLightbox('spirir.jpg', 'التقرير الطبي - معاناة أمي مع السرطان')">
+                <img src="spirir.jpg" alt="Medical documents">
+                <div class="zoom-icon">🔍</div>
+                <div class="image-overlay">
+                    <h3>🏥 A Mother's Battle</h3>
+                </div>
+            </div>
+            <div class="image-content">
+                <h3>Cancer Doesn't Care About War</h3>
+                <p>This medical report is my mother's death sentence if we can't get help...</p>
+                <p style="color: var(--success); font-weight: 600;">انقر لقراءة التفاصيل الطبية</p>
+            </div>
+        </div>
+
+        <!-- الصورة 5 -->
+        <div class="image-card">
+            <div class="image-container clickable-image" onclick="openLightbox('mashe.jpg', 'النزوح الجماعي - معاناة التهجير المتكرر')">
+                <img src="mashe.jpg" alt="Displaced people">
+                <div class="zoom-icon">🔍</div>
+                <div class="image-overlay">
+                    <h3>🚶‍♂️ The Walking Wounded</h3>
+                </div>
+            </div>
+            <div class="image-content">
+                <h3>This Is Us - The Displaced</h3>
+                <p>That's me in the crowd, carrying everything we own in a small bag...</p>
+                <p style="color: var(--primary); font-weight: 600;">انقر لمشاهدة حجم المأساة</p>
+            </div>
+        </div>
+
+        <!-- الصورة 6 -->
+        <div class="image-card">
+            <div class="image-container clickable-image" onclick="openLightbox('eat.jpg', 'أزمة الجوع - معركة البقاء على قيد الحياة')">
+                <img src="eat.jpg" alt="Food distribution">
+                <div class="zoom-icon">🔍</div>
+                <div class="image-overlay">
+                    <h3>🍞 The Fight for Food</h3>
+                </div>
+            </div>
+            <div class="image-content">
+                <h3>This Is What Hunger Looks Like</h3>
+                <p>That's not a queue - it's a battle for survival. People fighting for a piece of bread...</p>
+                <p style="color: var(--danger); font-weight: 600;">انقر لرؤية معاناة الجوع</p>
+            </div>
+        </div>
+    </div>
         </section>
 
         <!-- Impact Stories Section -->
@@ -481,6 +491,7 @@
 
 </body>
 </html>
+
 
 
 
