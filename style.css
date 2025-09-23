@@ -996,3 +996,32 @@
                 transition-duration: 0.01ms !important;
             }
         }
+/* إصلاح التمرير - أضف هذا في نهاية ال CSS */
+html, body {
+    overflow-x: hidden;
+    overflow-y: auto; /* هذا السطر مهم */
+    height: auto; /* تأكد من أن الارتفاع تلقائي */
+    -webkit-overflow-scrolling: touch; /* للجوال */
+}
+
+/* تأكد من أن body يمكنها التمرير */
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+/* إزالة أي overflow: hidden قد يكون موجود */
+main, section, .hero {
+    overflow: visible !important;
+}
+
+/* تحسين التمرير للجوال */
+@media (max-width: 768px) {
+    html {
+        -webkit-text-size-adjust: 100%;
+    }
+    
+    body {
+        touch-action: pan-y; /* يسمح بالتمرير العمودي */
+    }
+}
