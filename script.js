@@ -70,3 +70,127 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+        // وظائف أساسية
+        function toggleDonationPopup() {
+            const donationModal = document.getElementById('donation-popup');
+            if (donationModal) {
+                donationModal.classList.toggle('active');
+            }
+        }
+        
+        function copyText(elementId) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                const textArea = document.createElement('textarea');
+                textArea.value = element.textContent;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                // تأكيد النسخ
+                const copyBtn = document.querySelector('.copy-btn');
+                if (copyBtn) {
+                    const originalText = copyBtn.innerHTML;
+                    copyBtn.innerHTML = '<i class="fas fa-check"></i> COPIED! YOU\'RE A HERO!';
+                    copyBtn.style.background = 'linear-gradient(135deg, var(--success) 0%, #00d4ff 100%)';
+                    
+                    setTimeout(() => {
+                        copyBtn.innerHTML = originalText;
+                        copyBtn.style.background = 'linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%)';
+                    }, 3000);
+                }
+            }
+        }
+
+        // تغيير الوضع الداكن/الفاتح
+        document.addEventListener('DOMContentLoaded', function() {
+            const themeToggle = document.getElementById('themeToggle');
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function() {
+                    document.body.classList.toggle('dark-mode');
+                    const icon = this.querySelector('i');
+                    if (icon) {
+                        if (document.body.classList.contains('dark-mode')) {
+                            icon.classList.replace('fa-moon', 'fa-sun');
+                        } else {
+                            icon.classList.replace('fa-sun', 'fa-moon');
+                        }
+                    }
+                });
+            }
+
+            // تأثير التمرير
+            window.addEventListener('scroll', function() {
+                const header = document.getElementById('main-header');
+                const scrollTopBtn = document.querySelector('.scroll-arrow');
+                
+                if (header) {
+                    if (window.scrollY > 50) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                }
+                
+                if (scrollTopBtn) {
+                    if (window.scrollY > 300) {
+                        scrollTopBtn.classList.add('active');
+                    } else {
+                        scrollTopBtn.classList.remove('active');
+                    }
+                }
+            });
+
+            // تأثيرات الظهور عند التمرير
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            // مراقبة العناصر
+            document.querySelectorAll('.article-card, .image-card').forEach(el => {
+                observer.observe(el);
+            });
+
+            // التنقل السلس
+            document.querySelectorAll('nav a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // إزالة النشاط من جميع الروابط
+                    document.querySelectorAll('nav a').forEach(l => l.classList.remove('active'));
+                    // إضافة النشاط للرابط الحالي
+                    this.classList.add('active');
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId && targetId !== '#') {
+                        const targetSection = document.querySelector(targetId);
+                        if (targetSection) {
+                            window.scrollTo({
+                                top: targetSection.offsetTop - 100,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+
+            // العودة للأعلى
+            document.querySelector('.scroll-arrow').addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
