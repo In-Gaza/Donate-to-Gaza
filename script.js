@@ -194,3 +194,87 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 });
             });
         });
+// نظام عرض الصور الكامل
+let currentImageIndex = 0;
+const images = [
+    { src: 'car.jpg', caption: 'سيارتنا المدمرة - رمز أحلامنا المحطمة' },
+    { src: 'home.jpg', caption: 'منزلنا المدمر - حيث عشنا ذكرياتنا' },
+    { src: 'home2.jpg', caption: 'خيمتنا المؤقتة - ملجأنا الجديد' },
+    { src: 'spirir.jpg', caption: 'التقرير الطبي - معاناة أمي مع السرطان' },
+    { src: 'mashe.jpg', caption: 'النزوح الجماعي - معاناة التهجير المتكرر' },
+    { src: 'eat.jpg', caption: 'أزمة الجوع - معركة البقاء على قيد الحياة' }
+];
+
+function openLightbox(imageSrc, caption) {
+    const lightbox = document.getElementById('imageLightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    
+    // البحث عن index الصورة
+    currentImageIndex = images.findIndex(img => img.src === imageSrc);
+    
+    lightboxImage.src = imageSrc;
+    lightboxCaption.textContent = caption;
+    lightbox.classList.add('active');
+    
+    // منع التمرير عند فتح Lightbox
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('imageLightbox');
+    lightbox.classList.remove('active');
+    
+    // إعادة التمرير
+    document.body.style.overflow = 'auto';
+}
+
+function changeImage(direction) {
+    currentImageIndex += direction;
+    
+    // التكرار الدائري
+    if (currentImageIndex >= images.length) currentImageIndex = 0;
+    if (currentImageIndex < 0) currentImageIndex = images.length - 1;
+    
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    
+    lightboxImage.src = images[currentImageIndex].src;
+    lightboxCaption.textContent = images[currentImageIndex].caption;
+}
+
+// إغلاق Lightbox بالضغط على ESC
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeLightbox();
+    }
+});
+
+// إغلاق Lightbox بالضغط خارج الصورة
+document.getElementById('imageLightbox').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeLightbox();
+    }
+});
+
+// إضافة تأثير النقر على الصور
+document.querySelectorAll('.clickable-image').forEach(image => {
+    image.addEventListener('click', function() {
+        this.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            this.style.transform = 'scale(1)';
+        }, 150);
+    });
+});
+
+// تحسين للشاشات التي تعمل باللمس
+document.querySelectorAll('.clickable-image').forEach(image => {
+    image.addEventListener('touchstart', function() {
+        this.style.transform = 'scale(0.95)';
+    });
+    
+    image.addEventListener('touchend', function() {
+        this.style.transform = 'scale(1)';
+    });
+});
+
