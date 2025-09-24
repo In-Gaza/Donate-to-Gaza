@@ -192,5 +192,108 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                     top: 0,
                     behavior: 'smooth'
                 });
+
+
+
+
+                     // تحسينات JavaScript للجوال
+        document.addEventListener('DOMContentLoaded', function() {
+            // تحسين التمرير للجوال
+            let touchStartY = 0;
+            let touchEndY = 0;
+            
+            document.addEventListener('touchstart', function(e) {
+                touchStartY = e.changedTouches[0].screenY;
+            });
+            
+            document.addEventListener('touchend', function(e) {
+                touchEndY = e.changedTouches[0].screenY;
+                handleSwipe();
+            });
+            
+            function handleSwipe() {
+                // يمكن إضافة تحكم بالسوايب إذا لزم الأمر
+            }
+            
+            // تحسين ظهور زر التبرع على الجوال
+            function checkDonateButtonVisibility() {
+                const donateButton = document.querySelector('.donate-button');
+                const windowHeight = window.innerHeight;
+                
+                if (windowHeight < 600) {
+                    donateButton.style.top = '70%';
+                } else {
+                    donateButton.style.top = '50%';
+                }
+            }
+            
+            // تحسين الهيدر للتمرير
+            let lastScrollTop = 0;
+            window.addEventListener('scroll', function() {
+                const header = document.getElementById('main-header');
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    // التمرير لأسفل
+                    header.style.transform = 'translateY(-100%)';
+                } else {
+                    // التمرير لأعلى
+                    header.style.transform = 'translateY(0)';
+                }
+                
+                if (scrollTop > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                
+                lastScrollTop = scrollTop;
+                
+                // زر العودة للأعلى
+                const scrollButton = document.querySelector('.scroll-arrow');
+                if (scrollTop > 300) {
+                    scrollButton.classList.add('active');
+                } else {
+                    scrollButton.classList.remove('active');
+                }
+                
+                checkDonateButtonVisibility();
+            });
+            
+            // منع الزوم على المدخلات (اختياري)
+            document.addEventListener('touchstart', function(e) {
+                if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+                    document.body.style.zoom = '100%';
+                }
+            });
+            
+            // تحسين الأداء للجوال
+            let ticking = false;
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    requestAnimationFrame(function() {
+                        // أي كود يحتاج إلى تحسين أداء
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+            
+            // التهيئة الأولية
+            checkDonateButtonVisibility();
+        });
+        
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        function toggleDonationPopup() {
+            // كود فتح البوب أب
+            alert('Donation popup would open here');
+        }
             });
         });
+
