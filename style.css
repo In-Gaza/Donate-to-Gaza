@@ -1040,3 +1040,473 @@ main, section, .hero {
     }
 }
 
+
+
+
+
+
+
+
+
+
+        /* ===== إصلاحات الجوال الأساسية ===== */
+        
+        /* تأكد من أن viewport صحيح */
+        @viewport {
+            width: device-width;
+            zoom: 1.0;
+        }
+
+        /* إصلاح التمرير للجوال */
+        html, body {
+            overflow-x: hidden;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            height: auto;
+            position: relative;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            touch-action: pan-y;
+        }
+
+        /* ===== تحسين الهيدر للجوال ===== */
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            padding: 1rem 1.5rem;
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 900;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dark-mode header {
+            background: rgba(28, 28, 30, 0.98);
+        }
+
+        header.scrolled {
+            padding: 0.8rem 1.5rem;
+            font-size: 1.2rem;
+            height: 60px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: inherit;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 90%;
+        }
+
+        /* ===== تحسين زر التبرع للجوال ===== */
+        .donate-button {
+            position: fixed;
+            top: 50%;
+            right: 0;
+            background: linear-gradient(135deg, var(--success) 0%, #00d4ff 100%);
+            color: white;
+            padding: 1.2rem 1.5rem;
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            z-index: 999;
+            box-shadow: 0 8px 30px rgba(52, 199, 89, 0.6);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            transition: all 0.4s ease;
+            animation: donateFloatMobile 4s ease-in-out infinite;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: none;
+            outline: none;
+        }
+
+        @keyframes donateFloatMobile {
+            0%, 100% { 
+                transform: translateX(0) translateY(-50%); 
+            }
+            50% { 
+                transform: translateX(-5px) translateY(-50%); 
+            }
+        }
+
+        .donate-button:hover {
+            transform: translateX(-8px) translateY(-50%);
+            animation: none;
+        }
+
+        .donate-button span {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+
+        /* ===== تحسين التنقل السفلي للجوال ===== */
+        nav {
+            background: var(--card-bg);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0.8rem 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.1);
+            border-top: 1px solid var(--border);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            height: 70px;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 0.75rem;
+            padding: 0.5rem;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            flex: 1;
+            text-align: center;
+            min-width: 0;
+        }
+
+        nav a i {
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+            transition: all 0.3s ease;
+        }
+
+        nav a.active, nav a:hover {
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        nav a.active i, nav a:hover i {
+            transform: scale(1.2);
+        }
+
+        /* ===== تحسين الهيرو سيكشن للجوال ===== */
+        .hero {
+            background: linear-gradient(135deg, 
+                        rgba(0, 82, 165, 0.8) 0%, 
+                        rgba(165, 0, 82, 0.6) 50%, 
+                        rgba(0, 0, 0, 0.8) 100%),
+                        url('https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg') center/cover no-repeat;
+            height: 60vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 70px;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+
+        .hero-content {
+            max-width: 100%;
+            z-index: 2;
+            position: relative;
+        }
+
+        .hero h3 {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            font-weight: 500;
+            opacity: 0.9;
+            margin: 0 auto;
+            line-height: 1.4;
+        }
+
+        /* ===== تحسين المحتوى الرئيسي للجوال ===== */
+        main {
+            padding: 2rem 1rem;
+            max-width: 100%;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .article-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .article-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            padding: 1.5rem;
+            position: relative;
+            border: 1px solid var(--border);
+            margin-bottom: 1rem;
+        }
+
+        .article-card h1 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .article-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        /* ===== تحسين معرض الصور للجوال ===== */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .image-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+        }
+
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            height: 250px;
+        }
+
+        .image-content {
+            padding: 1.5rem;
+        }
+
+        .image-content h3 {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .image-content p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* ===== تحسين الفوتر للجوال ===== */
+        footer {
+            background: var(--card-bg);
+            color: var(--text-primary);
+            padding: 2rem 1rem;
+            text-align: center;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border);
+        }
+
+        footer p {
+            margin: 1rem 0;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* ===== تحسين زر العودة للأعلى للجوال ===== */
+        .scroll-arrow {
+            position: fixed;
+            bottom: 80px;
+            right: 15px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 122, 255, 0.4);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .scroll-arrow.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* ===== تحسين الـ Alert Banner للجوال ===== */
+        .alert-banner {
+            background: linear-gradient(135deg, #FFD700 0%, #FF6B00 100%);
+            color: #8B4513;
+            padding: 1rem;
+            font-weight: 700;
+            text-align: center;
+            font-size: 1rem;
+            margin-top: 70px;
+            position: relative;
+            z-index: 10;
+            animation: pulse 3s infinite;
+        }
+
+        /* ===== تحسينات خاصة للشاشات الصغيرة ===== */
+        @media (max-width: 480px) {
+            header {
+                padding: 0.8rem 1rem;
+                font-size: 1.1rem;
+                height: 60px;
+            }
+            
+            header.scrolled {
+                padding: 0.6rem 1rem;
+                font-size: 1rem;
+                height: 55px;
+            }
+            
+            .hero {
+                height: 50vh;
+                min-height: 350px;
+                margin-top: 60px;
+            }
+            
+            .hero h3 {
+                font-size: 1.6rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .donate-button {
+                padding: 1rem 1.2rem;
+                font-size: 1rem;
+            }
+            
+            .donate-button span {
+                display: none;
+            }
+            
+            nav {
+                height: 65px;
+                padding: 0.6rem 0;
+            }
+            
+            nav a {
+                font-size: 0.7rem;
+                padding: 0.3rem;
+            }
+            
+            nav a i {
+                font-size: 1.2rem;
+            }
+            
+            main {
+                padding: 1.5rem 0.8rem;
+            }
+            
+            .article-card, .image-card {
+                padding: 1.2rem;
+            }
+            
+            .image-container {
+                height: 200px;
+            }
+        }
+
+        /* ===== منع مشاكل اللمس ===== */
+        @media (hover: none) and (pointer: coarse) {
+            .donate-button:hover {
+                transform: translateX(-5px) translateY(-50%);
+            }
+            
+            nav a:hover {
+                transform: translateY(0);
+            }
+            
+            .article-card:hover, .image-card:hover {
+                transform: none;
+            }
+        }
+
+        /* ===== تحسين الأداء للجوال ===== */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* ===== إصلاح مشاكل iOS ===== */
+        @supports (-webkit-touch-callout: none) {
+            .hero {
+                height: -webkit-fill-available;
+                min-height: -webkit-fill-available;
+            }
+        }
+
+        /* بقية ال CSS يبقى كما هو */
+        :root {
+            --primary: #007AFF;
+            --primary-dark: #0056CC;
+            --secondary: #5856D6;
+            --success: #34C759;
+            --danger: #FF3B30;
+            --warning: #FF9500;
+            --background: #F2F2F7;
+            --card-bg: #FFFFFF;
+            --text-primary: #1C1C1E;
+            --text-secondary: #8E8E93;
+            --border: #C6C6C8;
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            --radius: 20px;
+            --transition: all 0.3s ease;
+        }
+
+        .dark-mode {
+            --primary: #0A84FF;
+            --primary-dark: #409CFF;
+            --secondary: #5E5CE6;
+            --background: #000000;
+            --card-bg: #1C1C1E;
+            --text-primary: #FFFFFF;
+            --text-secondary: #8E8E93;
+            --border: #38383A;
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+
