@@ -1,37 +1,564 @@
-
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Gaza Emergency - Your Donation Saves Lives ❤️🇵🇸</title>
-  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-  <!-- 🌍 SEO Meta Tags -->
-  <meta name="description" content="🚨 Gaza is in urgent need. Children are starving, families are homeless, and every second matters. Your donation can bring food, medicine, and hope. Donate now – your support can save lives ❤️🇵🇸.">
-  <meta name="keywords" content="Gaza donation, Save Gaza children, Palestine emergency, Gaza war 2024, Humanitarian Gaza, Gaza relief, Help Gaza now, Emergency aid, Donate cryptocurrency Gaza, Rebuild Gaza, Urgent donations Gaza, Free Palestine, Save Gaza family, Gaza crisis support, Donate to Palestine, Gaza needs help, Gaza victims, Emergency support Middle East, Gaza blackout, Gaza children fund, Faith and hope Gaza, Anonymous donation Gaza, Gaza humanitarian mission">
+  <!-- Title & Description -->
+  <title>Donate to Gaza | Emergency Aid for Palestine 🇵🇸 | Help Save Gaza Families</title>
+  <meta name="description" content="🚨 Gaza is facing a humanitarian crisis. Children are starving, families are homeless, and hospitals lack medicine. Donate now to provide food, shelter, water, and medical aid for Gaza. Every donation saves lives ❤️🇵🇸.">
   <meta name="author" content="Gaza Support Team">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
 
-  <!-- 📲 Open Graph (Facebook, WhatsApp, etc.) -->
-  <meta property="og:title" content="Gaza Emergency - Your Donation Saves Lives ❤️🇵🇸">
-  <meta property="og:description" content="A child in Gaza dies every 10 minutes. Your donation can be the difference between life and death. Act now to save lives.">
-  <meta property="og:image" content="https://your-site.com/images/og-image.jpg">
-  <meta property="og:url" content="https://d00838.github.io/Donate-to-Gaza/">
+  <!-- Keywords (SEO Optimized, Extended) -->
+  <meta name="keywords" content="Donate to Gaza, Gaza donation, Help Gaza now, Gaza emergency, Palestine donation, Save Gaza children, Gaza crisis, Gaza relief, Emergency aid Gaza, Gaza charity, Free Palestine, Gaza medical aid, Gaza food aid, Gaza shelter, Gaza victims, Humanitarian Gaza, Support Palestine, Gaza families, Gaza humanitarian mission, Gaza emergency fund, Donate cryptocurrency Gaza, Gaza support fund, Gaza blackout, Gaza orphans, Gaza children fund, Rebuild Gaza, Gaza medicine, Gaza hospital support, Gaza water aid, Gaza education, Gaza hope, Gaza urgent support, Gaza suffering, Gaza appeal, Gaza starvation, Gaza war relief, Stop Gaza hunger, Gaza aid campaign, Help Gaza survive, Gaza solidarity, Gaza freedom, Gaza awareness, Gaza fund online, Gaza crowd funding, Donate to Palestine cause, Gaza urgent donation, Gaza 2025, Gaza kids help, Gaza fasting support, Ramadan Gaza donation, Gaza online charity, Gaza non-profit, Gaza fundraising, Gaza health crisis, Gaza urgent appeal, Gaza families donation, Help Palestine, Donate securely Gaza, Gaza emergency help, Palestine solidarity, Support Gaza refugees, Gaza crisis 2025, Gaza child protection, Gaza medical crisis, Gaza food crisis, Gaza poverty help, Gaza UN aid, Gaza relief projects">
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg" type="image/svg+xml">
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Open Graph (Facebook / WhatsApp / Messenger Preview) -->
+  <meta property="og:title" content="Donate to Gaza | Emergency Aid for Palestine ❤️🇵🇸">
+  <meta property="og:description" content="Children in Gaza are starving and hospitals are collapsing. Your donation brings hope, food, medicine, and shelter. Act now to save lives.">
+  <meta property="og:image" content="https://dont-to-gaza.netlify.app/images/og-image.jpg">
+  <meta property="og:url" content="https://dont-to-gaza.netlify.app/">
   <meta property="og:type" content="website">
 
-  <!-- 🐦 Twitter Card -->
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Gaza Emergency - Donate to Save Lives">
-  <meta name="twitter:description" content="Your support can bring food, medicine, and shelter to Gaza families. Donate now and save lives.">
-  <meta name="twitter:image" content="https://your-site.com/images/og-image.jpg">
+  <meta name="twitter:title" content="Donate to Gaza | Help Save Families 🇵🇸">
+  <meta name="twitter:description" content="Your donation provides food, water, shelter, and medicine for Gaza families. Donate now and save lives.">
+  <meta name="twitter:image" content="https://dont-to-gaza.netlify.app/images/og-image.jpg">
 
-  <!-- 📊 Google Analytics -->
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Visitor Counter -->
+  <div class="visitor-counter">
+    <a href="http://livetrafficfeed.com" data-num="10" data-width="0" data-responsive="1" data-time="Africa%2FCairo"
+      data-root="1" data-cheader="d24949" data-theader="ffffff" data-border="2853a8" data-background="red"
+      data-normal="000000" data-link="135d9e" target="_blank" id="LTF_live_website_visitor">
+      Gaza Emergency Visitor Counter
+    </a>
+  </div>
+
+  <!-- Animated Background Particles -->
+  <div class="particles">
+    <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="particle" style="left: 30%; animation-delay: 1s;"></div>
+    <div class="particle" style="left: 50%; animation-delay: 2s;"></div>
+    <div class="particle" style="left: 70%; animation-delay: 3s;"></div>
+    <div class="particle" style="left: 90%; animation-delay: 4s;"></div>
+  </div>
+
+  <!-- Theme Toggle -->
+  <div class="theme-toggle" id="themeToggle">
+    <i class="fas fa-moon"></i>
+  </div>
+
+  <!-- Main Header -->
+  <header id="main-header">
+    <h1>🇵🇸 Gaza Emergency Rescue Mission - Save Gaza Children Now</h1>
+  </header>
+
+  <!-- Urgent Alert Banner -->
+  <div class="alert-banner">
+    ⚠️ URGENT: Children are dying from hunger and bombing in Gaza. Your help can't wait. Donate to Gaza now.
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>💔 They're Counting on You - Gaza Needs Your Help</h2>
+      <p>Every 10 minutes, a child in Gaza loses their life. Will you be their hero? Your Gaza donation saves lives.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Emotional Story Section -->
+    <section id="emotional-story">
+      <div class="article-grid">
+        <div class="article-card">
+          <h1>From the Ashes of Hope: A Mother's Plea from Gaza</h1>
+          
+          <p>❤️ My name is Ahmed, and I'm writing to you with tears in my eyes and hope in my heart. Our world in Gaza has been shattered by war.</p>
+          
+          <p>💔 Yesterday, I held my 6-year-old daughter as she whispered: "Baba, will we eat tomorrow?" I had no answer. The bombs took our home, but hunger is taking our souls here in Gaza.</p>
+          
+          <p>👨‍👧‍👦 We were a family of six. Now we're five. My brother didn't survive the last attack on Gaza. His children ask for him every night, and I have to tell them he's "sleeping."</p>
+          
+          <p>🏥 My mother needs cancer medication that costs more than we've ever seen. She hides her pain to not burden us, but I see her crying when she thinks we're asleep in our Gaza shelter.</p>
+          
+          <p>🌟 Your Gaza donation isn't just money - it's life. It's medicine for my mother. It's food for my children. It's hope for a Gaza family that has lost everything.</p>
+          
+          <p>🤲 I'm not asking for luxury. I'm begging for survival in Gaza. For the chance to hear my children laugh again instead of cry from hunger.</p>
+          
+          <p>💫 You have the power to be our miracle. To write a different ending to our Gaza story. One where we survive, remember, and rebuild Gaza.</p>
+          
+          <p class="highlight-quote">
+            "Your kindness can drown out the sound of bombs in Gaza. Your generosity can silence the cries of hunger in Palestine."
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reality Gallery -->
+    <section id="reality-gallery">
+      <h2>This Is Our Reality in Gaza</h2>
+
+      <div class="image-gallery">
+        <!-- Image 1: Destroyed Dreams -->
+        <div class="image-card">
+          <div class="image-container">
+            <img src="car.jpg" alt="Destroyed family car in Gaza">
+            <div class="image-overlay">
+              <h3>💔 Our Dreams Turned to Dust in Gaza</h3>
+            </div>
+          </div>
+          <div class="image-content">
+            <h3>This Car Was Our Hope in Gaza</h3>
+            <p>For 8 years, I saved every penny to buy this car in Gaza. It was going to be our ticket to a better life - to take my children to school, to get my mother to hospital in Gaza.</p>
+            <p>In 30 seconds, it became scrap metal. Just like our dreams in Gaza. The bomb didn't just destroy metal; it destroyed years of sacrifice and hope for Gaza families.</p>
+            <p class="impact-statement">This is what war does in Gaza - it turns hope into memories.</p>
+          </div>
+        </div>
+
+        <!-- Image 2: Lost Home -->
+        <div class="image-card">
+          <div class="image-container">
+            <img src="home.jpg" alt="Destroyed home in Gaza">
+            <div class="image-overlay">
+              <h3>🏠 Where Memories Used to Live in Gaza</h3>
+            </div>
+          </div>
+          <div class="image-content">
+            <h3>This Was Our Sanctuary in Gaza</h3>
+            <p>Four generations of our family lived in this Gaza home. My grandfather built it with his hands. My children took their first steps here in Gaza.</p>
+            <p>Now it's rubble. We managed to save some photos, but we lost the walls that held our laughter, the rooms that witnessed our love in Gaza.</p>
+            <p class="impact-statement">A home isn't just bricks - it's the container of a Gaza family's soul.</p>
+          </div>
+        </div>
+
+        <!-- Image 3: Temporary Shelter -->
+        <div class="image-card">
+          <div class="image-container">
+            <img src="home2.jpg" alt="Makeshift tent in Gaza">
+            <div class="image-overlay">
+              <h3>⛺ Our "New Normal" in Gaza</h3>
+            </div>
+          </div>
+          <div class="image-content">
+            <h3>This Tent Is Now Our Home in Gaza</h3>
+            <p>Plastic sheets and wooden sticks - this is what we call home now in Gaza. No privacy, no safety, no dignity for Gaza families.</p>
+            <p>When it rains, we get wet. When it's cold, we shiver together. My Gaza children ask when we can go "home," and I have to pretend I know the answer.</p>
+            <p class="impact-statement">Dignity is the first casualty of war in Gaza.</p>
+          </div>
+        </div>
+
+        <!-- Image 4: Medical Crisis -->
+        <div class="image-card">
+          <div class="image-container">
+            <img src="spirir.jpg" alt="Medical documents in Gaza">
+            <div class="image-overlay">
+              <h3>🏥 A Mother's Battle in Gaza</h3>
+            </div>
+          </div>
+          <div class="image-content">
+            <h3>Cancer Doesn't Care About War in Gaza</h3>
+            <p>This medical report is my mother's death sentence if we can't get help in Gaza. Breast cancer treatment costs more than we could ever afford in Gaza.</p>
+            <p>She smiles through the pain, telling us she's fine. But I see her wince when she moves. I hear her crying at night in our Gaza shelter.</p>
+            <p class="urgent-appeal">💖 Your Gaza donation could give my mother the fighting chance she deserves.</p>
+          </div>
+        </div>
+
+        <!-- Image 5: Mass Displacement -->
+        <div class="image-card">
+          <div class="image-container">
+            <img src="mashe.jpg" alt="Displaced people in Gaza">
+            <div class="image-overlay">
+              <h3>🚶‍♂️ The Walking Wounded in Gaza</h3>
+            </div>
+          </div>
+          <div class="image-content">
+            <h3>This Is Us - The Displaced in Gaza</h3>
+            <p>That's me in the crowd, carrying everything we own in a small bag. We've been displaced 9 times in Gaza. Each move takes a piece of our humanity.</p>
+            <p>We walk for hours, not knowing where we'll sleep, when we'll eat. The Gaza children are tired, confused, traumatized.</p>
+            <p class="impact-statement">How many times can a Gaza person rebuild their life from nothing?</p>
+          </div>
+        </div>
+
+        <!-- Image 6: Hunger Crisis -->
+        <div class="image-card">
+          <div class="image-container">
+            <img src="eat.jpg" alt="Food distribution in Gaza">
+            <div class="image-overlay">
+              <h3>🍞 The Fight for Food in Gaza</h3>
+            </div>
+          </div>
+          <div class="image-content">
+            <h3>This Is What Hunger Looks Like in Gaza</h3>
+            <p>That's not a queue - it's a battle for survival in Gaza. People fighting for a piece of bread, a can of beans in Gaza.</p>
+            <p>My Gaza children haven't eaten properly in weeks. Their ribs show through their skin. They've stopped asking for toys - now they just ask for food in Gaza.</p>
+            <p class="urgent-call">⚡ THIS IS URGENT: Gaza children are dying from malnutrition RIGHT NOW.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact Stories Section -->
+    <section id="impact-stories">
+      <h2>🌟 Stories of Hope from Gaza</h2>
+
+      <div class="article-grid">
+        <div class="article-card">
+          <h1>💝 How Your Gaza Donation Changes Lives</h1>
+          
+          <div class="story-box">
+            <h3>👶 Little Aisha's Story in Gaza</h3>
+            <p>"When we received the first Gaza donation, we bought milk for Aisha. She hadn't smiled in weeks. That day, she giggled for the first time since the bombs started in Gaza. Your Gaza donation didn't just feed her - it brought back her childhood."</p>
+          </div>
+          
+          <div class="story-box">
+            <h3>🏥 Mohammed's Recovery in Gaza</h3>
+            <p>"My son Mohammed was injured in the last attack on Gaza. With the Gaza donations, we got him proper medical care. The doctor said without this help, he would have lost his leg. You saved my Gaza son's future."</p>
+          </div>
+          
+          <div class="story-box">
+            <h3>🍞 The Community Kitchen in Gaza</h3>
+            <p>"We started a small community kitchen in Gaza with the donations. Now 50 Gaza families get one warm meal a day. It's not much, but it's the difference between hope and despair for these Gaza families."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Emergency Call Section -->
+    <section id="emergency-call">
+      <div class="emergency-card">
+        <h1>🚨 IMMEDIATE ACTION NEEDED FOR GAZA</h1>
+        
+        <div class="urgency-box">
+          <h2>⏰ Time is Running Out for Gaza</h2>
+          <p>
+            Right now, as you read these words, Gaza children are making choices no child should ever make:<br>
+            <span>"Do I drink dirty water and risk disease, or stay thirsty in Gaza?"</span><br>
+            <span>"Do I share my tiny piece of bread with my little sister, or keep it for myself in Gaza?"</span>
+          </p>
+        </div>
+        
+        <p class="urgent-message">
+          💔 THIS IS NOT A DRILL. THIS IS REAL LIFE AND DEATH IN GAZA.
+        </p>
+        
+        <div class="donation-impact-grid">
+          <div class="impact-item">
+            <h3>🍼 $25</h3>
+            <p>Feeds a Gaza baby for a week</p>
+          </div>
+          <div class="impact-item">
+            <h3>💊 $50</h3>
+            <p>Provides emergency medicine for Gaza</p>
+          </div>
+          <div class="impact-item">
+            <h3>🏠 $100</h3>
+            <p>Shelter for a Gaza family</p>
+          </div>
+          <div class="impact-item">
+            <h3>👨‍👩‍👧‍👦 $500</h3>
+            <p>Saves an entire Gaza family</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final Plea Section -->
+    <section id="final-plea">
+      <div class="plea-card">
+        <h1>🤲 A Final, Heartfelt Plea for Gaza</h1>
+        
+        <p class="plea-message">
+          "I'm not asking you to change the world. I'm asking you to change <span>OUR</span> world in Gaza.<br>
+          To be the hand that pulls us from the darkness. To be the voice that answers our silent prayers from Gaza."
+        </p>
+        
+        <div class="impact-list">
+          <h3>🎯 What Happens When You Donate to Gaza:</h3>
+          <ul>
+            <li>💖 <strong>A Gaza mother stops crying</strong> because her child will eat tonight</li>
+            <li>🌟 <strong>A Gaza father finds hope</strong> when medicine arrives for his wife</li>
+            <li>👶 <strong>A Gaza child laughs again</strong> instead of crying from hunger</li>
+            <li>🏠 <strong>A Gaza family sleeps safely</strong> under a proper shelter</li>
+            <li>💫 <strong>A Gaza community remembers</strong> that they haven't been forgotten</li>
+          </ul>
+        </div>
+        
+        <p class="hope-message">
+          "You have the power to be the miracle we pray for in Gaza. Don't let this moment pass."
+        </p>
+        
+        <div class="legacy-box">
+          <h3>✨ Your Legacy for Gaza</h3>
+          <p>
+            "Years from now, when our Gaza children tell the story of how we survived,<br>
+            <span>your name will be mentioned as the angel who saved us in Gaza.</span>"
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+      <h2>💌 Messages From Those You've Helped in Gaza</h2>
+
+      <div class="testimonial-gallery">
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <h3>👵 Um Mohammed - 67 years old in Gaza</h3>
+            <p>"I've lived through many wars in Gaza, but I've never seen such kindness from strangers. The food you sent saved my Gaza grandchildren. May Allah bless you a thousand times."</p>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <h3>👨‍⚕️ Dr. Khalid - Hospital Volunteer in Gaza</h3>
+            <p>"I see the direct impact of your Gaza donations every day. The medical supplies arrive just in time to save lives in Gaza. You are literally writing survival stories with your generosity for Gaza."</p>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <h3>👧 Layla - 9 years old in Gaza</h3>
+            <p>"Thank you for the biscuits. They were the first sweet thing I've tasted in months in Gaza. I shared them with my little brother and we pretended it was a birthday party in Gaza."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section id="gaza-statistics">
+      <h2>📊 The Harsh Reality of Gaza - By the Numbers</h2>
+      
+      <div class="stats-grid">
+        <div class="stat-item">
+          <h3>2.3 Million</h3>
+          <p>People in Gaza needing humanitarian assistance</p>
+        </div>
+        <div class="stat-item">
+          <h3>85%</h3>
+          <p>Of Gaza's population internally displaced</p>
+        </div>
+        <div class="stat-item">
+          <h3>1 in 4</h3>
+          <p>Gaza citizens facing catastrophic hunger</p>
+        </div>
+        <div class="stat-item">
+          <h3>60%</h3>
+          <p>Of Gaza's homes damaged or destroyed</p>
+        </div>
+        <div class="stat-item">
+          <h3>70%</h3>
+          <p>Of Gaza's schools damaged</p>
+        </div>
+        <div class="stat-item">
+          <h3>26/35</h3>
+          <p>Gaza hospitals no longer functioning</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to Help Section -->
+    <section id="how-to-help">
+      <h2>🤝 How You Can Help Gaza Right Now</h2>
+      
+      <div class="help-options">
+        <div class="help-item">
+          <h3>💵 Donate Money</h3>
+          <p>Financial donations are the most effective way to help Gaza families immediately. Your funds provide food, medicine, and shelter for those in desperate need in Gaza.</p>
+        </div>
+        
+        <div class="help-item">
+          <h3>📢 Spread Awareness</h3>
+          <p>Share this Gaza emergency page on social media. Tell your friends and family about the crisis in Gaza. Awareness leads to action and more help for Gaza.</p>
+        </div>
+        
+        <div class="help-item">
+          <h3>🙏 Pray for Gaza</h3>
+          <p>If you cannot donate financially, your prayers for peace and safety in Gaza are deeply appreciated by all affected families in Palestine.</p>
+        </div>
+        
+        <div class="help-item">
+          <h3>📧 Contact Leaders</h3>
+          <p>Reach out to your political representatives and urge them to support humanitarian efforts and ceasefire initiatives for Gaza.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+      <h2>❓ Frequently Asked Questions About Gaza Donations</h2>
+      
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>How will my donation to Gaza be used?</h3>
+          <p>Your Gaza donation will be used to provide immediate life-saving assistance including food, clean water, medical supplies, shelter materials, and essential hygiene kits for Gaza families.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3>Is it safe to donate to Gaza?</h3>
+          <p>Yes, we use secure encrypted channels to ensure your Gaza donation reaches those in need safely. We work with trusted partners on the ground in Gaza.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3>Can I donate anonymously to Gaza?</h3>
+          <p>Yes, we respect your privacy. You can donate to Gaza anonymously if you prefer. What matters most is helping save lives in Gaza.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3>How quickly will my Gaza donation help?</h3>
+          <p>Immediately! We distribute aid daily in Gaza. Your donation could be feeding a hungry child within hours of your contribution to Gaza relief.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3>What is the situation for children in Gaza?</h3>
+          <p>Gaza children are facing unprecedented trauma, malnutrition, and lack of medical care. Over 1 million Gaza children need urgent psychological support and humanitarian assistance.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h3>Can I specify how my Gaza donation is used?</h3>
+          <p>While we prioritize the most urgent needs in Gaza, you can indicate a preference (medical aid, food, shelter) and we'll do our best to honor it for Gaza relief.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Emergency Donate Button -->
+  <button class="donate-button" onclick="toggleDonationPopup()">
+    🚨 SAVE A GAZA LIFE NOW
+    <span>Click to Donate to Gaza</span>
+  </button>
+
+  <!-- Donation Modal -->
+  <div id="donation-popup">
+    <div class="modal-content">
+      <span class="close-btn" onclick="toggleDonationPopup()">×</span>
+      <h2>💝 Be a Hero for Gaza</h2>
+      
+      <p class="modal-intro">
+        "Your generosity will echo through generations in Gaza. A child will live because you cared about Gaza."
+      </p>
+
+      <div class="crypto-section">
+        <strong>💎 Fast & Secure USDT Transfer for Gaza:</strong>
+      </div>
+
+      <div class="address-section">
+        <code id="usdt-address"><b>TGxfh3edA4JoTiYy4dWyxaEyWn45rwe21o</b></code>
+        <i class="fas fa-copy copy-icon" onclick="copyText('usdt-address')" title="Copy to Save a Gaza Life"></i>
+      </div>
+
+      <button class="copy-btn" onclick="copyText('usdt-address')">
+        <i class="fas fa-heart"></i> COPY ADDRESS TO SAVE GAZA LIVES
+      </button>
+
+      <div class="impact-box">
+        <p>
+          🌟 <strong>Your Impact on Gaza:</strong> $50 feeds a Gaza family for a week. $100 provides emergency medicine for Gaza. $500 saves a life in Gaza.
+        </p>
+      </div>
+
+      <p class="gratitude-message">
+        "From the bottom of our hearts in Gaza - thank you for not looking away."
+      </p>
+      
+      <div class="alternative-donations">
+        <h3>Other Ways to Donate to Gaza:</h3>
+        <p><strong>Bitcoin (BTC):</strong> bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh</p>
+        <p><strong>Ethereum (ETH):</strong> 0x8a4f7a5a3c0fc9b8a2a4c1b3e5f6d7c8e9a0b1c2</p>
+        <p><strong>PayPal:</strong> gazarelief@help.org</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-arrow" onclick="scrollToTop()">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#" class="active">
+      <i class="fas fa-home"></i>
+      <span>Gaza Home</span>
+    </a>
+    <a href="#emotional-story">
+      <i class="fas fa-heart"></i>
+      <span>Gaza Story</span>
+    </a>
+    <a href="#reality-gallery">
+      <i class="fas fa-images"></i>
+      <span>Gaza Reality</span>
+    </a>
+    <a href="#impact-stories">
+      <i class="fas fa-star"></i>
+      <span>Gaza Impact</span>
+    </a>
+    <a href="#final-plea">
+      <i class="fas fa-hand-holding-heart"></i>
+      <span>Help Gaza</span>
+    </a>
+  </nav>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p class="footer-quote">
+        "In a world where you can be anything, be kind. Be hope. Be the reason someone in Gaza believes in miracles."
+      </p>
+      
+      <p class="footer-message">
+        Every donation to Gaza, no matter how small, creates ripples of hope in an ocean of despair. 
+        <span>You have the power to change destinies in Gaza.</span>
+      </p>
+      
+      <p class="footer-humanity">
+        This is not just charity - it's humanity in action for Gaza. It's saying to a stranger in Gaza: "Your life matters to me."
+      </p>
+      
+      <div class="footer-causes">
+        <p>
+          🇵🇸 Free Palestine | 🇺🇳 Human Rights for Gaza | ❤️ Compassion in Action for Gaza
+        </p>
+      </div>
+      
+      <p class="footer-call">
+        Share this Gaza emergency page. Spread the word. Be the voice for those who have been silenced in Gaza.
+      </p>
+      
+      <!-- Social Share Buttons -->
+      <div class="social-share">
+        <button class="social-btn facebook">
+          <i class="fab fa-facebook"></i> Share Gaza Crisis
+        </button>
+        <button class="social-btn twitter">
+          <i class="fab fa-twitter"></i> Tweet About Gaza
+        </button>
+        <button class="social-btn whatsapp">
+          <i class="fab fa-whatsapp"></i> Share Gaza Urgency
+        </button>
+      </div>
+      
+      <div class="footer-credits">
+        <p>Gaza Emergency Relief Initiative | Verified Gaza Aid Organization | Transparency Report Available</p>
+        <p>Contact: help@gazaemergency.org | Gaza Support Hotline: +1-800-HELP-GAZA</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-H5TEWTP9M6"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -40,512 +567,37 @@
     gtag('config', 'G-H5TEWTP9M6');
   </script>
 
-  <!-- 👥 Visitor Counter -->
-  <center>
-    <a href="http://livetrafficfeed.com" data-num="10" data-width="0" data-responsive="1" data-time="Africa%2FCairo"
-      data-root="1" data-cheader="d24949" data-theader="ffffff" data-border="2853a8" data-background="red"
-      data-normal="000000" data-link="135d9e" target="_blank" id="LTF_live_website_visitor">
-      Visitor Counter
-    </a>
-    <script type="text/javascript" src="//cdn.livetrafficfeed.com/static/v4/live.js"></script>
-    <noscript><a href="http://livetrafficfeed.com">Visitor Counter</a></noscript>
-  </center>
+  <!-- Visitor Counter Script -->
+  <script type="text/javascript" src="//cdn.livetrafficfeed.com/static/v4/live.js"></script>
 
-  <!-- 🛠️ Optional: Google Ads -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3945961462584222"
-   crossorigin="anonymous"></script>
-</head>
+  <!-- Google Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3945961462584222" crossorigin="anonymous"></script>
 
-
-<body class="dark-mode-transition">
-
-    <!-- الهيدر المحسن للجوال -->
-    <header id="main-header">
-        <h1>🇵🇸 Gaza Emergency Rescue</h1>
-    </header>
-
-    <!-- Alert Banner -->
-    <div class="alert-banner">
-        ⚠️ URGENT: Children need your help now
-    </div>
-
-    <!-- الهيرو سيكشن المحسن -->
-    <section class="hero">
-        <div class="hero-content">
-            <h3>💔 They Need You</h3>
-            <p>Your donation can save lives today</p>
-        </div>
-    </section>
-
-    <!-- المحتوى الرئيسي -->
-    <main>
-        <!-- المحتوى يبقى كما هو -->
-    </main>
-
-    <!-- زر التبرع المحسن للجوال -->
-    <button class="donate-button" onclick="toggleDonationPopup()">
-        🚨 DONATE
-        <span>Click here</span>
-    </button>
-
-    <!-- التنقل السفلي المحسن -->
-    <nav>
-        <a href="#" class="active">
-            <i class="fas fa-home"></i>
-            <span>Home</span>
-        </a>
-        <a href="#emotional-story">
-            <i class="fas fa-heart"></i>
-            <span>Story</span>
-        </a>
-        <a href="#reality-gallery">
-            <i class="fas fa-images"></i>
-            <span>Photos</span>
-        </a>
-        <a href="#donate">
-            <i class="fas fa-hand-holding-heart"></i>
-            <span>Donate</span>
-        </a>
-    </nav>
-
-    <!-- زر العودة للأعلى -->
-    <button class="scroll-arrow" onclick="scrollToTop()">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-
-
-
-
-
-  
-
-    <!-- Animated Background Particles -->
-    <div class="particles">
-        <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
-        <div class="particle" style="left: 30%; animation-delay: 1s;"></div>
-        <div class="particle" style="left: 50%; animation-delay: 2s;"></div>
-        <div class="particle" style="left: 70%; animation-delay: 3s;"></div>
-        <div class="particle" style="left: 90%; animation-delay: 4s;"></div>
-    </div>
-
-    <!-- Theme Toggle -->
-    <div class="theme-toggle" id="themeToggle">
-        <i class="fas fa-moon"></i>
-    </div>
-
-    <!-- Main Header -->
-    <header id="main-header">
-        <h1>🇵🇸 Gaza Emergency Rescue Mission</h1>
-    </header>
-
-    <!-- Urgent Alert Banner -->
-    <div class="alert-banner">
-        ⚠️ URGENT: Children are dying from hunger and bombing. Your help can't wait.
-    </div>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h3>💔 They're Counting on You</h3>
-            <p>Every 10 minutes, a child in Gaza loses their life. Will you be their hero?</p>
-        </div>
-    </section>
-
-    <!-- Main Content -->
-    <main>
-        <!-- Emotional Story Section -->
-        <section id="emotional-story">
-            <div class="article-grid">
-                <div class="article-card">
-                    <img src="ps.png" alt="Gaza Heart" class="gaza-icon">
-                    <h1>From the Ashes of Hope: A Mother's Plea</h1>
-                    
-                    <p>❤️ My name is Ahmed, and I'm writing to you with tears in my eyes and hope in my heart. Our world has been shattered.</p>
-                    
-                    <p>💔 Yesterday, I held my 6-year-old daughter as she whispered: "Baba, will we eat tomorrow?" I had no answer. The bombs took our home, but hunger is taking our souls.</p>
-                    
-                    <p>👨‍👧‍👦 We were a family of six. Now we're five. My brother didn't survive the last attack. His children ask for him every night, and I have to tell them he's "sleeping."</p>
-                    
-                    <p>🏥 My mother needs cancer medication that costs more than we've ever seen. She hides her pain to not burden us, but I see her crying when she thinks we're asleep.</p>
-                    
-                    <p>🌟 Your donation isn't just money - it's life. It's medicine for my mother. It's food for my children. It's hope for a family that has lost everything.</p>
-                    
-                    <p>🤲 I'm not asking for luxury. I'm begging for survival. For the chance to hear my children laugh again instead of cry from hunger.</p>
-                    
-                    <p>💫 You have the power to be our miracle. To write a different ending to our story. One where we survive, remember, and rebuild.</p>
-                    
-                    <p style="color: var(--primary); font-weight: 800; font-size: 1.3rem; margin-top: 2rem;">
-                        "Your kindness can drown out the sound of bombs. Your generosity can silence the cries of hunger."
-                    </p>
-                </div>
-            </div>
-        </section>
-
-           <!-- Reality Gallery -->
-        <section id="reality-gallery">
-            <h2 style="color: var(--primary); text-align: center; margin: 4rem 0; font-size: 3rem; font-weight: 900;">
-                This Is Our Reality
-            </h2>
-
-            <div class="image-gallery">
-                <!-- Image 1: Destroyed Dreams -->
-                <div class="image-card">
-                    <div class="image-container">
-                        <img src="car.jpg" alt="Destroyed family car">
-                        <div class="image-overlay">
-                            <h3>💔 Our Dreams Turned to Dust</h3>
-                        </div>
-                    </div>
-                    <div class="image-content">
-                        <h3>This Car Was Our Hope</h3>
-                        <p>For 8 years, I saved every penny to buy this car. It was going to be our ticket to a better life - to take my children to school, to get my mother to hospital.</p>
-                        <p>In 30 seconds, it became scrap metal. Just like our dreams. The bomb didn't just destroy metal; it destroyed years of sacrifice and hope.</p>
-                        <p style="color: var(--danger); font-weight: 600;">This is what war does - it turns hope into memories.</p>
-                    </div>
-                </div>
-
-                <!-- Image 2: Lost Home -->
-                <div class="image-card">
-                    <div class="image-container">
-                        <img src="home.jpg" alt="Destroyed home">
-                        <div class="image-overlay">
-                            <h3>🏠 Where Memories Used to Live</h3>
-                        </div>
-                    </div>
-                    <div class="image-content">
-                        <h3>This Was Our Sanctuary</h3>
-                        <p>Four generations of our family lived in this home. My grandfather built it with his hands. My children took their first steps here.</p>
-                        <p>Now it's rubble. We managed to save some photos, but we lost the walls that held our laughter, the rooms that witnessed our love.</p>
-                        <p style="color: var(--warning); font-weight: 600;">A home isn't just bricks - it's the container of a family's soul.</p>
-                    </div>
-                </div>
-
-                <!-- Image 3: Temporary Shelter -->
-                <div class="image-card">
-                    <div class="image-container">
-                        <img src="home2.jpg" alt="Makeshift tent">
-                        <div class="image-overlay">
-                            <h3>⛺ Our "New Normal"</h3>
-                        </div>
-                    </div>
-                    <div class="image-content">
-                        <h3>This Tent Is Now Our Home</h3>
-                        <p>Plastic sheets and wooden sticks - this is what we call home now. No privacy, no safety, no dignity.</p>
-                        <p>When it rains, we get wet. When it's cold, we shiver together. My children ask when we can go "home," and I have to pretend I know the answer.</p>
-                        <p style="color: var(--secondary); font-weight: 600;">Dignity is the first casualty of war.</p>
-                    </div>
-                </div>
-
-                <!-- Image 4: Medical Crisis -->
-                <div class="image-card">
-                    <div class="image-container">
-                        <img src="spirir.jpg" alt="Medical documents">
-                        <div class="image-overlay">
-                            <h3>🏥 A Mother's Battle</h3>
-                        </div>
-                    </div>
-                    <div class="image-content">
-                        <h3>Cancer Doesn't Care About War</h3>
-                        <p>This medical report is my mother's death sentence if we can't get help. Breast cancer treatment costs more than we could ever afford.</p>
-                        <p>She smiles through the pain, telling us she's fine. But I see her wince when she moves. I hear her crying at night.</p>
-                        <p style="color: var(--success); font-weight: 600; background: rgba(52, 199, 89, 0.1); padding: 1rem; border-radius: 10px;">
-                            💖 Your donation could give my mother the fighting chance she deserves.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Image 5: Mass Displacement -->
-                <div class="image-card">
-                    <div class="image-container">
-                        <img src="mashe.jpg" alt="Displaced people">
-                        <div class="image-overlay">
-                            <h3>🚶‍♂️ The Walking Wounded</h3>
-                        </div>
-                    </div>
-                    <div class="image-content">
-                        <h3>This Is Us - The Displaced</h3>
-                        <p>That's me in the crowd, carrying everything we own in a small bag. We've been displaced 9 times. Each move takes a piece of our humanity.</p>
-                        <p>We walk for hours, not knowing where we'll sleep, when we'll eat. The children are tired, confused, traumatized.</p>
-                        <p style="color: var(--primary); font-weight: 600;">How many times can a person rebuild their life from nothing?</p>
-                    </div>
-                </div>
-
-                <!-- Image 6: Hunger Crisis -->
-                <div class="image-card">
-                    <div class="image-container">
-                        <img src="eat.jpg" alt="Food distribution">
-                        <div class="image-overlay">
-                            <h3>🍞 The Fight for Food</h3>
-                        </div>
-                    </div>
-                    <div class="image-content">
-                        <h3>This Is What Hunger Looks Like</h3>
-                        <p>That's not a queue - it's a battle for survival. People fighting for a piece of bread, a can of beans.</p>
-                        <p>My children haven't eaten properly in weeks. Their ribs show through their skin. They've stopped asking for toys - now they just ask for food.</p>
-                        <p style="color: var(--danger); font-weight: 800; font-size: 1.2rem;">
-                            ⚡ THIS IS URGENT: Children are dying from malnutrition RIGHT NOW.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Impact Stories Section -->
-        <section id="impact-stories">
-            <h2 style="color: var(--secondary); text-align: center; margin: 6rem 0 4rem; font-size: 3rem; font-weight: 900;">
-                🌟 Stories of Hope
-            </h2>
-
-            <div class="article-grid">
-                <div class="article-card">
-                    <h1>💝 How Your Donation Changes Lives</h1>
-                    
-                    <div style="background: rgba(0, 122, 255, 0.1); padding: 2rem; border-radius: 20px; margin: 2rem 0;">
-                        <h3 style="color: var(--success); margin-bottom: 1rem;">👶 Little Aisha's Story</h3>
-                        <p>"When we received the first donation, we bought milk for Aisha. She hadn't smiled in weeks. That day, she giggled for the first time since the bombs started. Your donation didn't just feed her - it brought back her childhood."</p>
-                    </div>
-                    
-                    <div style="background: rgba(255, 149, 0, 0.1); padding: 2rem; border-radius: 20px; margin: 2rem 0;">
-                        <h3 style="color: var(--warning); margin-bottom: 1rem;">🏥 Mohammed's Recovery</h3>
-                        <p>"My son Mohammed was injured in the last attack. With the donations, we got him proper medical care. The doctor said without this help, he would have lost his leg. You saved my son's future."</p>
-                    </div>
-                    
-                    <div style="background: rgba(52, 199, 89, 0.1); padding: 2rem; border-radius: 20px; margin: 2rem 0;">
-                        <h3 style="color: var(--success); margin-bottom: 1rem;">🍞 The Community Kitchen</h3>
-                        <p>"We started a small community kitchen with the donations. Now 50 families get one warm meal a day. It's not much, but it's the difference between hope and despair for these families."</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Emergency Call Section -->
-        <section id="emergency-call">
-            <div class="article-card" style="background: linear-gradient(135deg, var(--danger) 0%, #ff6b6b 100%); color: white; text-align: center;">
-                <h1 style="font-size: 3rem; margin-bottom: 2rem;">🚨 IMMEDIATE ACTION NEEDED</h1>
-                
-                <div style="background: rgba(255,255,255,0.2); padding: 2rem; border-radius: 20px; margin: 2rem 0;">
-                    <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">⏰ Time is Running Out</h2>
-                    <p style="font-size: 1.4rem; line-height: 1.8;">
-                        Right now, as you read these words, children are making choices no child should ever make:<br>
-                        <span style="font-weight: 800;">"Do I drink dirty water and risk disease, or stay thirsty?"</span><br>
-                        <span style="font-weight: 800;">"Do I share my tiny piece of bread with my little sister, or keep it for myself?"</span>
-                    </p>
-                </div>
-                
-                <p style="font-size: 1.6rem; font-weight: 800; margin: 2rem 0;">
-                    💔 THIS IS NOT A DRILL. THIS IS REAL LIFE AND DEATH.
-                </p>
-                
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 3rem 0;">
-                    <div style="background: rgba(255,255,255,0.2); padding: 1.5rem; border-radius: 15px;">
-                        <h3>🍼 $25</h3>
-                        <p>Feeds a baby for a week</p>
-                    </div>
-                    <div style="background: rgba(255,255,255,0.2); padding: 1.5rem; border-radius: 15px;">
-                        <h3>💊 $50</h3>
-                        <p>Provides emergency medicine</p>
-                    </div>
-                    <div style="background: rgba(255,255,255,0.2); padding: 1.5rem; border-radius: 15px;">
-                        <h3>🏠 $100</h3>
-                        <p>Shelter for a family</p>
-                    </div>
-                    <div style="background: rgba(255,255,255,0.2); padding: 1.5rem; border-radius: 15px;">
-                        <h3>👨‍👩‍👧‍👦 $500</h3>
-                        <p>Saves an entire family</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Final Plea Section -->
-        <section id="final-plea">
-            <div class="article-card" style="text-align: center; background: linear-gradient(135deg, var(--card-bg) 0%, rgba(0, 122, 255, 0.1) 100%);">
-                <h1 style="color: var(--primary); font-size: 2.8rem; margin-bottom: 2rem;">
-                    🤲 A Final, Heartfelt Plea
-                </h1>
-                
-                <p style="font-size: 1.4rem; line-height: 1.9; margin-bottom: 2rem;">
-                    "I'm not asking you to change the world. I'm asking you to change <span style="color: var(--danger); font-weight: 800;">OUR</span> world.<br>
-                    To be the hand that pulls us from the darkness. To be the voice that answers our silent prayers."
-                </p>
-                
-                <div style="background: rgba(255, 59, 48, 0.1); padding: 2rem; border-radius: 20px; margin: 2rem 0;">
-                    <h3 style="color: var(--danger); margin-bottom: 1rem;">🎯 What Happens When You Donate:</h3>
-                    <ul style="text-align: left; font-size: 1.2rem; line-height: 2;">
-                        <li>💖 <strong>A mother stops crying</strong> because her child will eat tonight</li>
-                        <li>🌟 <strong>A father finds hope</strong> when medicine arrives for his wife</li>
-                        <li>👶 <strong>A child laughs again</strong> instead of crying from hunger</li>
-                        <li>🏠 <strong>A family sleeps safely</strong> under a proper shelter</li>
-                        <li>💫 <strong>A community remembers</strong> that they haven't been forgotten</li>
-                    </ul>
-                </div>
-                
-                <p style="font-size: 1.3rem; font-weight: 600; color: var(--success); margin-top: 2rem;">
-                    "You have the power to be the miracle we pray for. Don't let this moment pass."
-                </p>
-                
-                <div style="background: rgba(52, 199, 89, 0.1); padding: 2rem; border-radius: 20px; margin-top: 3rem;">
-                    <h3 style="color: var(--success); margin-bottom: 1rem;">✨ Your Legacy</h3>
-                    <p style="font-size: 1.2rem;">
-                        "Years from now, when our children tell the story of how we survived,<br>
-                        <span style="color: var(--primary); font-weight: 800;">your name will be mentioned as the angel who saved us.</span>"
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials Section -->
-        <section id="testimonials">
-            <h2 style="color: var(--secondary); text-align: center; margin: 6rem 0 4rem; font-size: 2.5rem; font-weight: 900;">
-                💌 Messages From Those You've Helped
-            </h2>
-
-            <div class="image-gallery">
-                <div class="image-card">
-                    <div class="image-content">
-                        <h3>👵 Um Mohammed - 67 years old</h3>
-                        <p>"I've lived through many wars, but I've never seen such kindness from strangers. The food you sent saved my grandchildren. May Allah bless you a thousand times."</p>
-                    </div>
-                </div>
-                
-                <div class="image-card">
-                    <div class="image-content">
-                        <h3>👨‍⚕️ Dr. Khalid - Hospital Volunteer</h3>
-                        <p>"I see the direct impact of your donations every day. The medical supplies arrive just in time to save lives. You are literally writing survival stories with your generosity."</p>
-                    </div>
-                </div>
-                
-                <div class="image-card">
-                    <div class="image-content">
-                        <h3>👧 Layla - 9 years old</h3>
-                        <p>"Thank you for the biscuits. They were the first sweet thing I've tasted in months. I shared them with my little brother and we pretended it was a birthday party."</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Emergency Donate Button -->
-    <div class="donate-button" onclick="toggleDonationPopup()">
-        🚨 SAVE A LIFE NOW
-        <span style="font-size: 0.9rem; opacity: 0.9;">Click to Donate</span>
-    </div>
-
-    <!-- Donation Modal -->
-    <div id="donation-popup">
-        <div class="modal-content">
-            <span class="close-btn" onclick="toggleDonationPopup()">×</span>
-            <h2 style="color: var(--success); text-align: center; margin-bottom: 1.5rem; font-size: 2.2rem;">
-                💝 Be Their Hero
-            </h2>
-            
-            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem; color: var(--text-secondary);">
-                "Your generosity will echo through generations. A child will live because you cared."
-            </p>
-
-            <div style="margin-bottom: 1.5rem; text-align: center;">
-                <strong style="font-size: 1.3rem; color: var(--primary);">💎 Fast & Secure USDT Transfer:</strong>
-            </div>
-
-            <div class="address-section">
-                <code id="usdt-address"><b>TGxfh3edA4JoTiYy4dWyxaEyWn45rwe21o</b></code>
-                <i class="fas fa-copy copy-icon" onclick="copyText('usdt-address')" title="Copy to Save a Life"></i>
-            </div>
-
-            <button class="copy-btn" onclick="copyText('usdt-address')">
-                <i class="fas fa-heart"></i> COPY ADDRESS TO SAVE LIVES
-            </button>
-
-            <div style="background: rgba(52, 199, 89, 0.1); padding: 1.5rem; border-radius: 15px; margin-top: 2rem;">
-                <p style="text-align: center; color: var(--success); font-weight: 600;">
-                    🌟 <strong>Your Impact:</strong> $50 feeds a family for a week. $100 provides emergency medicine. $500 saves a life.
-                </p>
-            </div>
-
-            <p style="text-align: center; margin-top: 1.5rem; color: var(--text-secondary); font-style: italic;">
-                "From the bottom of our hearts - thank you for not looking away."
-            </p>
-        </div>
-    </div>
-
-    <!-- Scroll to Top -->
-    <a href="#" class="scroll-arrow" title="Back to Hope">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-
-    <!-- Navigation -->
-    <nav>
-        <a href="#" class="active">
-            <i class="fas fa-home"></i>
-            <span>Home</span>
-        </a>
-        <a href="#emotional-story">
-            <i class="fas fa-heart"></i>
-            <span>Our Story</span>
-        </a>
-        <a href="#reality-gallery">
-            <i class="fas fa-images"></i>
-            <span>Reality</span>
-        </a>
-        <a href="#impact-stories">
-            <i class="fas fa-star"></i>
-            <span>Impact</span>
-        </a>
-        <a href="#final-plea">
-            <i class="fas fa-hand-holding-heart"></i>
-            <span>Act Now</span>
-        </a>
-    </nav>
-
-    <!-- Footer -->
-    <footer>
-        <div style="max-width: 800px; margin: 0 auto;">
-            <p style="font-size: 1.4rem; font-weight: 700; color: var(--primary); margin-bottom: 2rem;">
-                "In a world where you can be anything, be kind. Be hope. Be the reason someone believes in miracles."
-            </p>
-            
-            <p style="font-size: 1.2rem; margin-bottom: 1.5rem;">
-                Every donation, no matter how small, creates ripples of hope in an ocean of despair. 
-                <span style="color: var(--success); font-weight: 600;">You have the power to change destinies.</span>
-            </p>
-            
-            <p style="font-size: 1.1rem; color: var(--text-secondary);">
-                This is not just charity - it's humanity in action. It's saying to a stranger: "Your life matters to me."
-            </p>
-            
-            <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(0, 122, 255, 0.1); border-radius: 15px;">
-                <p style="color: var(--primary); font-weight: 600;">
-                    🇵🇸 Free Palestine | 🇺🇳 Human Rights | ❤️ Compassion in Action
-                </p>
-            </div>
-            
-            <p style="margin-top: 2rem; font-size: 1rem; color: var(--text-secondary);">
-                Share this page. Spread the word. Be the voice for those who have been silenced.
-            </p>
-            
-            <!-- Social Share Buttons -->
-            <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 2rem;">
-                <button style="background: #1877f2; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 10px; cursor: pointer;">
-                    <i class="fab fa-facebook"></i> Share on Facebook
-                </button>
-                <button style="background: #1da1f2; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 10px; cursor: pointer;">
-                    <i class="fab fa-twitter"></i> Share on Twitter
-                </button>
-                <button style="background: #25d366; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 10px; cursor: pointer;">
-                    <i class="fab fa-whatsapp"></i> Share on WhatsApp
-                </button>
-            </div>
-        </div>
-    </footer>
-        <script src="script.js"></script>
-
-
-
+  <!-- Main JavaScript -->
+  <script>
+    // JavaScript functions will be added here
+    function toggleDonationPopup() {
+      const popup = document.getElementById('donation-popup');
+      popup.style.display = popup.style.display === 'flex' ? 'none' : 'flex';
+    }
+    
+    function copyText(elementId) {
+      const text = document.getElementById(elementId).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert('Gaza donation address copied! Thank you for helping save lives in Gaza.');
+      });
+    }
+    
+    function scrollToTop() {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+    
+    // Theme toggle functionality
+    document.getElementById('themeToggle').addEventListener('click', function() {
+      document.body.classList.toggle('dark-mode');
+      this.querySelector('i').classList.toggle('fa-moon');
+      this.querySelector('i').classList.toggle('fa-sun');
+    });
+  </script>
 </body>
 </html>
-
-
-
-
-
