@@ -187,9 +187,9 @@ header {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(40px);
     -webkit-backdrop-filter: blur(40px);
-    padding: 1.5rem 3rem;
+    padding: -0.5rem 3rem;
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 24px;
     font-weight: 900;
     position: fixed;
     width: 100%;
@@ -197,8 +197,10 @@ header {
     z-index: 1000;
     box-shadow: var(--shadow);
     border-bottom: 1px solid var(--border);
-    animation: slideInFromTop 1.2s ease-out;
-    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: slideInFromTop 1.2s 
+ease-out;
+    transition: all 0.8s 
+cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .dark-mode header {
@@ -527,7 +529,7 @@ main {
     padding: 2rem 2.5rem;
     border-top-left-radius: 35px;
     border-bottom-left-radius: 35px;
-    font-size: 1.5rem;
+    font-size: 17px;
     font-weight: 800;
     cursor: pointer;
     z-index: 999;
@@ -745,7 +747,7 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 1.5rem 0;
+    padding: 0;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -984,8 +986,8 @@ nav a:hover i {
     }
     
     header.scrolled {
-        padding: 0.8rem 1.5rem;
-        font-size: 1.4rem;
+        padding: 0 0;
+        font-size: 18px;
         height: 60px;
     }
     
@@ -1421,3 +1423,4 @@ main, section, .hero {
         bottom: 70px;
     }
 }
+
