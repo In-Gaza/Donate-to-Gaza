@@ -139,6 +139,7 @@
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    height: 100%;
 }
 
 body {
@@ -152,6 +153,33 @@ body {
     transition: background-color 1.5s cubic-bezier(0.4, 0, 0.2, 1);
     -webkit-text-size-adjust: 100%;
     touch-action: pan-y;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+/* ===== تأثير الانتقال الداكن ===== */
+.dark-mode-transition {
+    position: relative;
+    overflow: hidden;
+}
+
+.dark-mode-transition::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at var(--x, 50%) var(--y, 50%),
+            rgba(0, 0, 0, 0.8) 0%, transparent 50%);
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+.dark-mode-transition.active::before {
+    opacity: 1;
 }
 
 /* ===== الهيدر المتطور ===== */
@@ -261,6 +289,7 @@ header.scrolled {
     background: linear-gradient(135deg, #fff 0%, #ff6b6b 50%, #4ecdc4 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
     text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     animation: textGlow 3s ease-in-out infinite;
 }
@@ -512,10 +541,11 @@ main {
     letter-spacing: 1px;
     border: none;
     outline: none;
+    transform: translateY(-50%);
 }
 
 .donate-button:hover {
-    transform: translateX(-15px) scale(1.1) rotate(5deg);
+    transform: translateY(-50%) translateX(-15px) scale(1.1) rotate(5deg);
     animation: none;
     box-shadow: 0 40px 100px rgba(52, 199, 89, 0.9);
 }
@@ -536,6 +566,8 @@ main {
     visibility: hidden;
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 1rem;
 }
 
 #donation-popup.active {
@@ -547,13 +579,15 @@ main {
     background: var(--card-bg);
     border-radius: 40px;
     padding: 4rem;
-    width: 90%;
+    width: 100%;
     max-width: 600px;
     box-shadow: 0 60px 150px rgba(0, 0, 0, 0.6);
     transform: scale(0.7) translateY(100px) rotateX(45deg);
     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     border: 2px solid var(--border);
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 #donation-popup.active .modal-content {
@@ -577,6 +611,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1;
 }
 
 .close-btn:hover {
@@ -596,6 +631,7 @@ main {
     border: 2px solid var(--border);
     position: relative;
     overflow: hidden;
+    gap: 1rem;
 }
 
 .address-section::before {
@@ -607,6 +643,25 @@ main {
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(0, 122, 255, 0.1), transparent);
     animation: shimmer 2s infinite;
+}
+
+#usdt-address {
+    font-size: 1.1rem;
+    word-break: break-all;
+    flex: 1;
+}
+
+.copy-icon {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--primary);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.copy-icon:hover {
+    color: var(--success);
+    transform: scale(1.2);
 }
 
 .copy-btn {
@@ -717,6 +772,7 @@ nav a {
     text-align: center;
     position: relative;
     overflow: hidden;
+    min-width: 0;
 }
 
 nav a::before {
@@ -859,6 +915,10 @@ nav a:hover i {
     main {
         padding: 5rem 2.5rem;
     }
+    
+    .modal-content {
+        padding: 3rem;
+    }
 }
 
 /* الأجهزة اللوحية (768px - 1023px) */
@@ -904,6 +964,11 @@ nav a:hover i {
     .donate-button {
         padding: 1.8rem 2.2rem;
         font-size: 1.3rem;
+    }
+    
+    .modal-content {
+        padding: 2.5rem;
+        border-radius: 30px;
     }
 }
 
@@ -1032,6 +1097,23 @@ nav a:hover i {
     footer p {
         font-size: 1.1rem;
     }
+    
+    .modal-content {
+        padding: 2rem 1.5rem;
+        border-radius: 25px;
+    }
+    
+    .address-section {
+        padding: 1.5rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .copy-btn {
+        padding: 1.2rem 2rem;
+        font-size: 1.1rem;
+    }
 }
 
 /* الهواتف الصغيرة (320px - 480px) */
@@ -1058,14 +1140,17 @@ nav a:hover i {
         height: 50vh;
         min-height: 350px;
         margin-top: 60px;
+        padding: 1.5rem 1rem;
     }
     
     .hero h3 {
         font-size: 1.8rem;
+        margin-bottom: 1rem;
     }
     
     .hero p {
         font-size: 1rem;
+        line-height: 1.4;
     }
     
     main {
@@ -1080,11 +1165,13 @@ nav a:hover i {
     
     .article-card h1 {
         font-size: 1.5rem;
+        margin-bottom: 1.2rem;
     }
     
     .article-card p {
         font-size: 1rem;
         line-height: 1.6;
+        margin-bottom: 1rem;
     }
     
     .gaza-icon {
@@ -1104,15 +1191,19 @@ nav a:hover i {
     
     .image-content h3 {
         font-size: 1.3rem;
+        margin-bottom: 1rem;
     }
     
     .image-content h3::before {
-        left: -25px;
+        left: -20px;
+        font-size: 0.9rem;
     }
     
     .donate-button {
         padding: 1rem 1.2rem;
         font-size: 1rem;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
     }
     
     .donate-button span {
@@ -1143,6 +1234,7 @@ nav a:hover i {
     nav a {
         font-size: 0.7rem;
         padding: 0.5rem 0.3rem;
+        border-radius: 15px;
     }
     
     nav a i {
@@ -1156,19 +1248,30 @@ nav a:hover i {
     
     footer p {
         font-size: 1rem;
+        margin: 1rem 0;
     }
     
     .modal-content {
-        padding: 2.5rem 1.5rem;
-        border-radius: 25px;
+        padding: 1.5rem;
+        border-radius: 20px;
+        max-height: 85vh;
     }
     
     .close-btn {
-        top: 15px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        font-size: 2rem;
+        top: 10px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+    
+    .copy-btn {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    #usdt-address {
+        font-size: 0.9rem;
     }
 }
 
@@ -1205,7 +1308,7 @@ nav a:hover i {
     }
     
     .donate-button:active {
-        transform: translateX(-8px) scale(1.05);
+        transform: translateY(-50%) translateX(-8px) scale(1.05);
     }
     
     nav a:active {
@@ -1220,6 +1323,12 @@ nav a:hover i {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
+    
+    .hero::before,
+    .alert-banner::before,
+    .address-section::before {
+        animation: none !important;
+    }
 }
 
 /* ===== إصلاحات خاصة بـ iOS ===== */
@@ -1232,6 +1341,10 @@ nav a:hover i {
     body {
         -webkit-user-select: none;
         -webkit-touch-callout: none;
+    }
+    
+    .modal-content {
+        -webkit-overflow-scrolling: touch;
     }
 }
 
@@ -1250,4 +1363,61 @@ body {
 /* إزالة أي overflow: hidden قد يكون موجود */
 main, section, .hero {
     overflow: visible !important;
+}
+
+/* ===== تحسينات للشاشات الكبيرة جداً (4K وما فوق) ===== */
+@media (min-width: 2000px) {
+    main {
+        max-width: 1800px;
+    }
+    
+    .hero-content {
+        max-width: 1200px;
+    }
+    
+    .hero h3 {
+        font-size: 5rem;
+    }
+    
+    .hero p {
+        font-size: 2.2rem;
+    }
+    
+    .article-card h1 {
+        font-size: 3rem;
+    }
+    
+    .article-card p {
+        font-size: 1.4rem;
+    }
+}
+
+/* ===== تحسينات للوضع الأفقي في الجوال ===== */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        height: 100vh;
+        min-height: auto;
+    }
+    
+    .hero h3 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .alert-banner {
+        margin-top: 60px;
+        padding: 0.8rem;
+    }
+    
+    nav {
+        height: 55px;
+    }
+    
+    .scroll-arrow {
+        bottom: 70px;
+    }
 }
