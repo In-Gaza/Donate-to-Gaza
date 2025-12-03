@@ -209,7 +209,7 @@ cubic-bezier(0.4, 0, 0.2, 1);
 
 header.scrolled {
     padding: 1rem 3rem;
-    font-size: 2rem;
+    font-size: 17px;
     background: rgba(255, 255, 255, 0.98);
 }
 
@@ -1128,7 +1128,7 @@ nav a:hover i {
     
     header.scrolled {
         padding: 0.6rem 1rem;
-        font-size: 1.1rem;
+        font-size: 18px;
         height: 55px;
     }
     
@@ -1423,4 +1423,5 @@ main, section, .hero {
         bottom: 70px;
     }
 }
+
 
