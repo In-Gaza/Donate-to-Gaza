@@ -757,6 +757,7 @@ nav {
     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+        height: 90px;
 }
 
 nav a {
@@ -926,8 +927,6 @@ nav a:hover i {
 /* الأجهزة اللوحية (768px - 1023px) */
 @media (max-width: 1023px) {
     header {
-        padding: 1.2rem 2rem;
-        font-size: 2rem;
     }
     
     .hero {
@@ -1423,5 +1422,6 @@ main, section, .hero {
         bottom: 70px;
     }
 }
+
 
 
