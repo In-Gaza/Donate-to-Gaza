@@ -29,6 +29,10 @@
     --border: #38383A;
     --shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
 }
+.asd
+{
+    font-size: 17px;
+}
 
 /* ===== الأنيميشنات الأساسية ===== */
 @keyframes float {
@@ -1422,6 +1426,7 @@ main, section, .hero {
         bottom: 70px;
     }
 }
+
 
 
 
