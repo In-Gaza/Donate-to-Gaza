@@ -426,43 +426,312 @@
         <span>Click here</span>
     </button>
 
-    <!-- Donation Modal -->
-    <div id="donation-popup">
-        <div class="modal-content">
-            <span class="close-btn" onclick="toggleDonationPopup()">×</span>
-            <h2 style="color: var(--success); text-align: center; margin-bottom: 1.5rem; font-size: 2.2rem;">
-                💝 Be Their Hero
-            </h2>
+```html
+<!-- ==================== Donation Modal ==================== -->
+<div id="donation-popup">
+    <div class="modal-content">
 
-            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem; color: var(--text-secondary);">
-                "Your generosity will echo through generations. A child will live because you cared."
+        <span class="close-btn" onclick="toggleDonationPopup()">×</span>
+
+        <!-- Header -->
+        <div class="donation-header">
+            <div class="donation-icon">❤️</div>
+
+            <h2>Be Their Hero</h2>
+
+            <p>
+                Your generosity can help provide food, medicine, shelter,
+                and essential support to families in Gaza.
             </p>
+        </div>
 
-            <div style="margin-bottom: 1.5rem; text-align: center;">
-                <strong style="font-size: 1.3rem; color: var(--primary);">💎 Fast & Secure USDT Transfer (TRC20) Network: </strong>
+
+        <!-- ==================== CRYPTO DONATIONS ==================== -->
+        <section class="donation-section">
+
+            <div class="section-title">
+                <span class="section-icon">💎</span>
+                <div>
+                    <h3>Donate with Cryptocurrency</h3>
+                    <p>Fast, global and direct transfers</p>
+                </div>
             </div>
 
-            <div class="address-section">
-                <code id="usdt-address"><b>TGxfh3edA4JoTiYy4dWyxaEyWn45rwe21o</b></code>
-                <i class="fas fa-copy copy-icon" onclick="copyText('usdt-address')" title="Copy to Save a Life"></i>
+
+            <!-- USDT TRC20 -->
+            <div class="crypto-card">
+
+                <div class="crypto-info">
+                    <div class="crypto-logo usdt-logo">₮</div>
+
+                    <div>
+                        <h4>USDT</h4>
+                        <span>TRON Network — TRC20</span>
+                    </div>
+                </div>
+
+                <div class="network-warning">
+                    ⚠️ Send USDT only through the <strong>TRC20 / TRON</strong> network.
+                </div>
+
+                <div class="address-box">
+                    <code id="usdt-address">
+                        TGxfh3edA4JoTiYy4dWyxaEyWn45rwe21o
+                    </code>
+
+                    <button
+                        class="copy-icon-btn"
+                        onclick="copyText('usdt-address')"
+                        title="Copy address">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+
+                <button class="copy-btn crypto-copy"
+                        onclick="copyText('usdt-address')">
+                    <i class="fas fa-copy"></i>
+                    Copy USDT Address
+                </button>
+
             </div>
 
-            <button class="copy-btn" onclick="copyText('usdt-address')">
-                <i class="fas fa-heart"></i> COPY ADDRESS TO SAVE LIVES
-            </button>
 
-            <div style="background: rgba(52, 199, 89, 0.1); padding: 1.5rem; border-radius: 15px; margin-top: 2rem;">
-                <p style="text-align: center; color: var(--success); font-weight: 600;">
-                    🌟 <strong>Your Impact:</strong> $50 feeds a family for a week. $100 provides emergency medicine.
-                    $500 saves a life.
+            <!-- Bitcoin -->
+            <div class="crypto-card">
+
+                <div class="crypto-info">
+                    <div class="crypto-logo btc-logo">₿</div>
+
+                    <div>
+                        <h4>Bitcoin</h4>
+                        <span>BTC — Bitcoin Network</span>
+                    </div>
+                </div>
+
+                <div class="network-warning">
+                    ⚠️ Send <strong>BTC only</strong> through the Bitcoin network.
+                </div>
+
+                <div class="address-box">
+                    <code id="btc-address">
+                        bc1q0q7gtun43m5c6dv7ny22j7czgmq4he356h0c6t
+                    </code>
+
+                    <button
+                        class="copy-icon-btn"
+                        onclick="copyText('btc-address')"
+                        title="Copy address">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+
+                <button class="copy-btn crypto-copy"
+                        onclick="copyText('btc-address')">
+                    <i class="fas fa-copy"></i>
+                    Copy Bitcoin Address
+                </button>
+
+            </div>
+
+
+            <!-- Ethereum -->
+            <div class="crypto-card">
+
+                <div class="crypto-info">
+                    <div class="crypto-logo eth-logo">Ξ</div>
+
+                    <div>
+                        <h4>Ethereum</h4>
+                        <span>ETH — Ethereum Network</span>
+                    </div>
+                </div>
+
+                <div class="network-warning">
+                    ⚠️ Send ETH only through the <strong>Ethereum</strong> network.
+                </div>
+
+                <div class="address-box">
+                    <code id="eth-address">
+                        0xda66dB72764350A00d61CE9E33AE6b0D70038f86
+                    </code>
+
+                    <button
+                        class="copy-icon-btn"
+                        onclick="copyText('eth-address')"
+                        title="Copy address">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+
+                <button class="copy-btn crypto-copy"
+                        onclick="copyText('eth-address')">
+                    <i class="fas fa-copy"></i>
+                    Copy Ethereum Address
+                </button>
+
+            </div>
+
+
+            <!-- BNB -->
+            <div class="crypto-card">
+
+                <div class="crypto-info">
+                    <div class="crypto-logo bnb-logo">◆</div>
+
+                    <div>
+                        <h4>BNB</h4>
+                        <span>BNB Smart Chain — BEP20</span>
+                    </div>
+                </div>
+
+                <div class="network-warning">
+                    ⚠️ Send BNB only through <strong>BNB Smart Chain (BEP20)</strong>.
+                </div>
+
+                <div class="address-box">
+                    <code id="bnb-address">
+                        0xda66dB72764350A00d61CE9E33AE6b0D70038f86
+                    </code>
+
+                    <button
+                        class="copy-icon-btn"
+                        onclick="copyText('bnb-address')"
+                        title="Copy address">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+
+                <button class="copy-btn crypto-copy"
+                        onclick="copyText('bnb-address')">
+                    <i class="fas fa-copy"></i>
+                    Copy BNB Address
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================== LOCAL DONATIONS ==================== -->
+        <section class="donation-section local-section">
+
+            <div class="section-title">
+                <span class="section-icon">📱</span>
+
+                <div>
+                    <h3>Local Donation Methods</h3>
+                    <p>Available for supporters in Palestine</p>
+                </div>
+            </div>
+
+
+            <!-- Jawwal Pay -->
+            <div class="local-card">
+
+                <div class="local-info">
+                    <div class="local-logo jawwal-logo">
+                        JP
+                    </div>
+
+                    <div>
+                        <h4>Jawwal Pay</h4>
+                        <span>Palestine</span>
+                    </div>
+                </div>
+
+                <div class="local-number-box">
+
+                    <span id="jawwal-number">
+                        0592199133
+                    </span>
+
+                    <button
+                        class="copy-icon-btn"
+                        onclick="copyText('jawwal-number')"
+                        title="Copy number">
+                        <i class="fas fa-copy"></i>
+                    </button>
+
+                </div>
+
+                <button class="copy-btn local-copy"
+                        onclick="copyText('jawwal-number')">
+                    <i class="fas fa-copy"></i>
+                    Copy Jawwal Pay Number
+                </button>
+
+            </div>
+
+
+            <!-- PalPay -->
+            <div class="local-card">
+
+                <div class="local-info">
+                    <div class="local-logo palpay-logo">
+                        PP
+                    </div>
+
+                    <div>
+                        <h4>PalPay</h4>
+                        <span>Palestine</span>
+                    </div>
+                </div>
+
+                <div class="local-number-box">
+
+                    <span id="palpay-number">
+                        0592199133
+                    </span>
+
+                    <button
+                        class="copy-icon-btn"
+                        onclick="copyText('palpay-number')"
+                        title="Copy number">
+                        <i class="fas fa-copy"></i>
+                    </button>
+
+                </div>
+
+                <button class="copy-btn local-copy"
+                        onclick="copyText('palpay-number')">
+                    <i class="fas fa-copy"></i>
+                    Copy PalPay Number
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Transparency Notice -->
+        <div class="donation-transparency">
+
+            <div class="transparency-icon">🤝</div>
+
+            <div>
+                <strong>Your Support Matters</strong>
+
+                <p>
+                    Donations are intended to help provide humanitarian
+                    assistance to people and families affected by the
+                    ongoing crisis in Gaza.
                 </p>
             </div>
 
-            <p style="text-align: center; margin-top: 1.5rem; color: var(--text-secondary); font-style: italic;">
-                "From the bottom of our hearts - thank you for not looking away."
-            </p>
         </div>
+
+
+        <!-- Thank You -->
+        <div class="donation-thanks">
+            <span>🇵🇸</span>
+            Thank you for standing with Gaza.
+            <span>❤️</span>
+        </div>
+
     </div>
+</div>
+```
+
 
     <!-- زر العودة للأعلى -->
     <button class="scroll-arrow" onclick="scrollToTop()">
