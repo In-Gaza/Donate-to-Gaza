@@ -349,26 +349,23 @@
         </section>
     </main>
 
-    <!-- زر التبرع المحسن للجوال -->
+    <!-- ===== زر التبرع الثابت (Fixed) ===== -->
     <button class="donate-button" onclick="toggleDonationPopup()">
         🚨 DONATE
         <span>Click here</span>
     </button>
 
-    <!-- ==================== Donation Modal ==================== -->
+    <!-- ===== Donation Modal ===== -->
     <div id="donation-popup">
         <div class="modal-content">
-
             <span class="close-btn" onclick="toggleDonationPopup()">×</span>
 
-            <!-- Header -->
             <div class="donation-header">
                 <div class="donation-icon">❤️</div>
                 <h2>Be Their Hero</h2>
                 <p>Your generosity can help provide food, medicine, shelter, and essential support to families in Gaza.</p>
             </div>
 
-            <!-- ==================== CRYPTO DONATIONS ==================== -->
             <section class="donation-section">
                 <div class="section-title">
                     <span class="section-icon">💎</span>
@@ -378,7 +375,7 @@
                     </div>
                 </div>
 
-                <!-- USDT TRC20 -->
+                <!-- USDT -->
                 <div class="crypto-card">
                     <div class="crypto-info">
                         <div class="crypto-logo usdt-logo">₮</div>
@@ -387,9 +384,7 @@
                             <span>TRON Network — TRC20</span>
                         </div>
                     </div>
-                    <div class="network-warning">
-                        ⚠️ Send USDT only through the <strong>TRC20 / TRON</strong> network.
-                    </div>
+                    <div class="network-warning">⚠️ Send USDT only through the <strong>TRC20 / TRON</strong> network.</div>
                     <div class="address-box">
                         <code id="usdt-address">TGxfh3edA4JoTiYy4dWyxaEyWn45rwe21o</code>
                         <button class="copy-icon-btn" onclick="copyText('usdt-address')" title="Copy address">
@@ -410,9 +405,7 @@
                             <span>BTC — Bitcoin Network</span>
                         </div>
                     </div>
-                    <div class="network-warning">
-                        ⚠️ Send <strong>BTC only</strong> through the Bitcoin network.
-                    </div>
+                    <div class="network-warning">⚠️ Send <strong>BTC only</strong> through the Bitcoin network.</div>
                     <div class="address-box">
                         <code id="btc-address">bc1q0q7gtun43m5c6dv7ny22j7czgmq4he356h0c6t</code>
                         <button class="copy-icon-btn" onclick="copyText('btc-address')" title="Copy address">
@@ -433,9 +426,7 @@
                             <span>ETH — Ethereum Network</span>
                         </div>
                     </div>
-                    <div class="network-warning">
-                        ⚠️ Send ETH only through the <strong>Ethereum</strong> network.
-                    </div>
+                    <div class="network-warning">⚠️ Send ETH only through the <strong>Ethereum</strong> network.</div>
                     <div class="address-box">
                         <code id="eth-address">0xda66dB72764350A00d61CE9E33AE6b0D70038f86</code>
                         <button class="copy-icon-btn" onclick="copyText('eth-address')" title="Copy address">
@@ -456,9 +447,7 @@
                             <span>BNB Smart Chain — BEP20</span>
                         </div>
                     </div>
-                    <div class="network-warning">
-                        ⚠️ Send BNB only through <strong>BNB Smart Chain (BEP20)</strong>.
-                    </div>
+                    <div class="network-warning">⚠️ Send BNB only through <strong>BNB Smart Chain (BEP20)</strong>.</div>
                     <div class="address-box">
                         <code id="bnb-address">0xda66dB72764350A00d61CE9E33AE6b0D70038f86</code>
                         <button class="copy-icon-btn" onclick="copyText('bnb-address')" title="Copy address">
@@ -471,7 +460,6 @@
                 </div>
             </section>
 
-            <!-- ==================== LOCAL DONATIONS ==================== -->
             <section class="donation-section local-section">
                 <div class="section-title">
                     <span class="section-icon">📱</span>
@@ -522,7 +510,6 @@
                 </div>
             </section>
 
-            <!-- Transparency Notice -->
             <div class="donation-transparency">
                 <div class="transparency-icon">🤝</div>
                 <div>
@@ -531,11 +518,9 @@
                 </div>
             </div>
 
-            <!-- Thank You -->
             <div class="donation-thanks">
                 <span>🇵🇸</span> Thank you for standing with Gaza. <span>❤️</span>
             </div>
-
         </div>
     </div>
 
