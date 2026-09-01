@@ -525,13 +525,13 @@ main {
 
 ```css
 /* =========================================================
-   DONATION BUTTON
+   DONATION BUTTON - مُعدّل
 ========================================================= */
 
 .donate-button {
     position: fixed;
     top: 50%;
-    right: 0;
+    right: 20px; /* ✅ تم التعديل من 0 إلى 20px */
 
     background: linear-gradient(
         135deg,
@@ -587,39 +587,53 @@ main {
         0 25px 70px rgba(52, 199, 89, 0.7);
 }
 
+/* تأثير الضغط على الزر */
+.donate-button:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+/* تحسين للجوال */
+@media (max-width: 600px) {
+    .donate-button {
+        right: 10px;
+        padding: 1rem 1.2rem;
+        font-size: 13px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+    
+    .donate-button span {
+        display: none;
+    }
+}
+
+@media (max-width: 380px) {
+    .donate-button {
+        right: 8px;
+        padding: 0.85rem 1rem;
+        font-size: 11px;
+    }
+}
 
 /* =========================================================
-   DONATION POPUP
+   DONATION POPUP - بدون تغيير
 ========================================================= */
 
 #donation-popup {
     position: fixed;
-
     inset: 0;
-
     width: 100%;
     height: 100%;
-
-    background:
-        rgba(0, 0, 0, 0.88);
-
+    background: rgba(0, 0, 0, 0.88);
     display: flex;
-
     justify-content: center;
     align-items: center;
-
     z-index: 1001;
-
     opacity: 0;
     visibility: hidden;
-
-    transition:
-        opacity 0.4s ease,
-        visibility 0.4s ease;
-
+    transition: opacity 0.4s ease, visibility 0.4s ease;
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-
     padding: 1rem;
 }
 
@@ -627,6 +641,7 @@ main {
     opacity: 1;
     visibility: visible;
 }
+
 
 
 /* =========================================================
