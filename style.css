@@ -29,10 +29,6 @@
     --border: #38383A;
     --shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
 }
-.asd
-{
-    font-size: 17px;
-}
 
 /* ===== الأنيميشنات الأساسية ===== */
 @keyframes float {
@@ -103,9 +99,9 @@
 }
 
 @keyframes donateFloat {
-    0%, 100% { transform: translateX(0) rotate(0deg); box-shadow: 0 20px 60px rgba(52, 199, 89, 0.6); }
-    33% { transform: translateX(-10px) rotate(2deg); box-shadow: 0 25px 70px rgba(52, 199, 89, 0.8); }
-    66% { transform: translateX(-5px) rotate(-2deg); box-shadow: 0 30px 80px rgba(52, 199, 89, 1); }
+    0%, 100% { transform: translateY(-50%) translateX(0) rotate(0deg); box-shadow: 0 20px 60px rgba(52, 199, 89, 0.6); }
+    33% { transform: translateY(-50%) translateX(-10px) rotate(2deg); box-shadow: 0 25px 70px rgba(52, 199, 89, 0.8); }
+    66% { transform: translateY(-50%) translateX(-5px) rotate(-2deg); box-shadow: 0 30px 80px rgba(52, 199, 89, 1); }
 }
 
 @keyframes spin {
@@ -174,8 +170,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at var(--x, 50%) var(--y, 50%),
-            rgba(0, 0, 0, 0.8) 0%, transparent 50%);
+    background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(0, 0, 0, 0.8) 0%, transparent 50%);
     z-index: 9999;
     pointer-events: none;
     opacity: 0;
@@ -191,7 +186,7 @@ header {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(40px);
     -webkit-backdrop-filter: blur(40px);
-    padding: -0.5rem 3rem;
+    padding: 1.5rem 3rem;
     text-align: center;
     font-size: 24px;
     font-weight: 900;
@@ -201,10 +196,8 @@ header {
     z-index: 1000;
     box-shadow: var(--shadow);
     border-bottom: 1px solid var(--border);
-    animation: slideInFromTop 1.2s 
-ease-out;
-    transition: all 0.8s 
-cubic-bezier(0.4, 0, 0.2, 1);
+    animation: slideInFromTop 1.2s ease-out;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .dark-mode header {
@@ -213,7 +206,7 @@ cubic-bezier(0.4, 0, 0.2, 1);
 
 header.scrolled {
     padding: 1rem 3rem;
-    font-size: 17px;
+    font-size: 18px;
     background: rgba(255, 255, 255, 0.98);
 }
 
@@ -251,11 +244,7 @@ header.scrolled {
 
 /* ===== قسم البطل مع بارالاكس متقدم ===== */
 .hero {
-    background: linear-gradient(135deg,
-            rgba(0, 82, 165, 0.8) 0%,
-            rgba(165, 0, 82, 0.6) 50%,
-            rgba(0, 0, 0, 0.8) 100%),
-        url('https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg') center/cover no-repeat;
+    background: linear-gradient(135deg, rgba(0, 82, 165, 0.8) 0%, rgba(165, 0, 82, 0.6) 50%, rgba(0, 0, 0, 0.8) 100%), url('https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg') center/cover no-repeat;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -523,100 +512,48 @@ main {
     padding-left: 20px;
 }
 
-```css
 /* =========================================================
-   DONATION BUTTON - مُعدّل
+   DONATION BUTTON - مُعدّل بالكامل (ثابت)
 ========================================================= */
 
 .donate-button {
-    position: fixed;
-    top: 50%;
-    right: 20px; /* ✅ تم التعديل من 0 إلى 20px */
-
-    background: linear-gradient(
-        135deg,
-        var(--success) 0%,
-        #00d4ff 100%
-    );
-
+    position: fixed !important;
+    top: 50% !important;
+    right: 20px !important;
+    transform: translateY(-50%) !important;
+    
+    background: linear-gradient(135deg, var(--success) 0%, #00d4ff 100%);
     color: #fff;
-
     padding: 1.4rem 1.8rem;
-
     border: none;
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
-
     font-size: 16px;
     font-weight: 800;
-
     cursor: pointer;
-
-    z-index: 999;
-
-    box-shadow:
-        0 15px 45px rgba(52, 199, 89, 0.45);
-
+    z-index: 999 !important;
+    box-shadow: 0 15px 45px rgba(52, 199, 89, 0.45);
     display: flex;
     align-items: center;
     gap: 0.7rem;
-
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease;
-
-    animation:
-        donateFloat 5s ease-in-out infinite,
-        glow 3s infinite;
-
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    animation: donateFloat 5s ease-in-out infinite;
     text-transform: uppercase;
     letter-spacing: 0.7px;
-
-    transform: translateY(-50%);
 }
 
 .donate-button:hover {
-    transform:
-        translateY(-50%)
-        translateX(-8px)
-        scale(1.04);
-
+    transform: translateY(-50%) translateX(-8px) scale(1.04) !important;
     animation: none;
-
-    box-shadow:
-        0 25px 70px rgba(52, 199, 89, 0.7);
+    box-shadow: 0 25px 70px rgba(52, 199, 89, 0.7);
 }
 
-/* تأثير الضغط على الزر */
 .donate-button:active {
-    transform: translateY(-50%) scale(0.95);
-}
-
-/* تحسين للجوال */
-@media (max-width: 600px) {
-    .donate-button {
-        right: 10px;
-        padding: 1rem 1.2rem;
-        font-size: 13px;
-        border-top-left-radius: 20px;
-        border-bottom-left-radius: 20px;
-    }
-    
-    .donate-button span {
-        display: none;
-    }
-}
-
-@media (max-width: 380px) {
-    .donate-button {
-        right: 8px;
-        padding: 0.85rem 1rem;
-        font-size: 11px;
-    }
+    transform: translateY(-50%) scale(0.95) !important;
 }
 
 /* =========================================================
-   DONATION POPUP - بدون تغيير
+   DONATION POPUP
 ========================================================= */
 
 #donation-popup {
@@ -642,289 +579,174 @@ main {
     visibility: visible;
 }
 
-
-
 /* =========================================================
    MODAL
 ========================================================= */
 
 .modal-content {
-
-    background:
-        var(--card-bg);
-
+    background: var(--card-bg);
     border-radius: 30px;
-
     padding: 2.5rem;
-
     width: 100%;
     max-width: 680px;
-
     position: relative;
-
     border: 1px solid var(--border);
-
-    box-shadow:
-        0 40px 120px rgba(0, 0, 0, 0.65);
-
+    box-shadow: 0 40px 120px rgba(0, 0, 0, 0.65);
     max-height: 92vh;
-
     overflow-y: auto;
-
-    transform:
-        translateY(40px)
-        scale(0.94);
-
-    transition:
-        transform 0.45s
-        cubic-bezier(0.4, 0, 0.2, 1);
-
+    transform: translateY(40px) scale(0.94);
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
     scrollbar-width: thin;
 }
 
 #donation-popup.active .modal-content {
-    transform:
-        translateY(0)
-        scale(1);
+    transform: translateY(0) scale(1);
 }
-
 
 /* =========================================================
    CLOSE BUTTON
 ========================================================= */
 
 .close-btn {
-
     position: absolute;
-
     top: 18px;
     right: 20px;
-
     width: 48px;
     height: 48px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border-radius: 50%;
-
     color: var(--text-secondary);
-
     font-size: 2rem;
     font-weight: 700;
-
     cursor: pointer;
-
-    transition:
-        all 0.3s ease;
-
+    transition: all 0.3s ease;
     z-index: 10;
+    background: transparent;
+    border: none;
 }
 
 .close-btn:hover {
-
     color: var(--danger);
-
-    background:
-        rgba(255, 59, 48, 0.1);
-
-    transform:
-        rotate(90deg)
-        scale(1.08);
+    background: rgba(255, 59, 48, 0.1);
+    transform: rotate(90deg) scale(1.08);
 }
-
 
 /* =========================================================
    DONATION HEADER
 ========================================================= */
 
 .donation-header {
-
     text-align: center;
-
-    padding:
-        0.5rem 2rem 2rem;
-
+    padding: 0.5rem 2rem 2rem;
 }
 
 .donation-icon {
-
     width: 70px;
     height: 70px;
-
-    margin:
-        0 auto 1rem;
-
+    margin: 0 auto 1rem;
     border-radius: 50%;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     font-size: 2rem;
-
-    background:
-        rgba(52, 199, 89, 0.12);
-
-    box-shadow:
-        0 10px 30px
-        rgba(52, 199, 89, 0.15);
+    background: rgba(52, 199, 89, 0.12);
+    box-shadow: 0 10px 30px rgba(52, 199, 89, 0.15);
 }
 
 .donation-header h2 {
-
     margin: 0 0 0.8rem;
-
     color: var(--success);
-
     font-size: 2.3rem;
-
     font-weight: 900;
 }
 
 .donation-header p {
-
     margin: 0 auto;
-
     max-width: 540px;
-
     color: var(--text-secondary);
-
     font-size: 1.05rem;
-
     line-height: 1.7;
 }
-
 
 /* =========================================================
    SECTIONS
 ========================================================= */
 
 .donation-section {
-
     margin-top: 1.5rem;
 }
 
 .section-title {
-
     display: flex;
-
     align-items: center;
-
     gap: 1rem;
-
     margin-bottom: 1rem;
-
     padding-bottom: 0.9rem;
-
-    border-bottom:
-        1px solid var(--border);
+    border-bottom: 1px solid var(--border);
 }
 
 .section-icon {
-
     width: 48px;
     height: 48px;
-
     flex-shrink: 0;
-
     border-radius: 14px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     font-size: 1.4rem;
-
-    background:
-        rgba(0, 122, 255, 0.1);
+    background: rgba(0, 122, 255, 0.1);
 }
 
 .section-title h3 {
-
     margin: 0;
-
     font-size: 1.25rem;
-
     color: var(--text-primary);
 }
 
 .section-title p {
-
     margin: 0.2rem 0 0;
-
     font-size: 0.9rem;
-
     color: var(--text-secondary);
 }
-
 
 /* =========================================================
    CRYPTO CARDS
 ========================================================= */
 
 .crypto-card {
-
     padding: 1.3rem;
-
     margin-bottom: 1rem;
-
     border-radius: 20px;
-
-    background:
-        var(--background);
-
-    border:
-        1px solid var(--border);
-
-    transition:
-        transform 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
+    background: var(--background);
+    border: 1px solid var(--border);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .crypto-card:hover {
-
-    transform:
-        translateY(-3px);
-
-    border-color:
-        rgba(0, 122, 255, 0.35);
-
-    box-shadow:
-        0 15px 35px
-        rgba(0, 0, 0, 0.12);
+    transform: translateY(-3px);
+    border-color: rgba(0, 122, 255, 0.35);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
 }
 
 .crypto-info {
-
     display: flex;
-
     align-items: center;
-
     gap: 0.9rem;
-
     margin-bottom: 0.8rem;
 }
 
 .crypto-logo {
-
     width: 45px;
     height: 45px;
-
     border-radius: 50%;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     font-size: 1.4rem;
-
     font-weight: 900;
-
     color: white;
-
     flex-shrink: 0;
 }
 
@@ -946,574 +768,254 @@ main {
 }
 
 .crypto-info h4 {
-
     margin: 0;
-
     font-size: 1.1rem;
 }
 
 .crypto-info span {
-
     display: block;
-
     margin-top: 0.2rem;
-
-    color:
-        var(--text-secondary);
-
+    color: var(--text-secondary);
     font-size: 0.85rem;
 }
-
 
 /* =========================================================
    NETWORK WARNING
 ========================================================= */
 
 .network-warning {
-
     padding: 0.7rem 0.9rem;
-
     margin-bottom: 0.8rem;
-
     border-radius: 10px;
-
-    background:
-        rgba(255, 159, 10, 0.08);
-
-    border:
-        1px solid
-        rgba(255, 159, 10, 0.2);
-
-    color:
-        var(--text-secondary);
-
+    background: rgba(255, 159, 10, 0.08);
+    border: 1px solid rgba(255, 159, 10, 0.2);
+    color: var(--text-secondary);
     font-size: 0.82rem;
-
     line-height: 1.5;
 }
-
 
 /* =========================================================
    ADDRESS BOX
 ========================================================= */
 
 .address-box {
-
     display: flex;
-
     align-items: center;
-
     gap: 0.7rem;
-
     padding: 0.9rem;
-
     border-radius: 13px;
-
-    background:
-        var(--card-bg);
-
-    border:
-        1px solid var(--border);
+    background: var(--card-bg);
+    border: 1px solid var(--border);
 }
 
 .address-box code {
-
     flex: 1;
-
     min-width: 0;
-
-    color:
-        var(--text-primary);
-
+    color: var(--text-primary);
     font-size: 0.83rem;
-
     line-height: 1.5;
-
     word-break: break-all;
-
-    font-family:
-        "Courier New",
-        monospace;
+    font-family: "Courier New", monospace;
 }
-
 
 /* =========================================================
    COPY ICON
 ========================================================= */
 
 .copy-icon-btn {
-
     width: 42px;
     height: 42px;
-
     flex-shrink: 0;
-
     border: none;
-
     border-radius: 11px;
-
-    background:
-        rgba(0, 122, 255, 0.1);
-
-    color:
-        var(--primary);
-
+    background: rgba(0, 122, 255, 0.1);
+    color: var(--primary);
     cursor: pointer;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     font-size: 1rem;
-
-    transition:
-        all 0.25s ease;
+    transition: all 0.25s ease;
 }
 
 .copy-icon-btn:hover {
-
-    background:
-        var(--primary);
-
+    background: var(--primary);
     color: white;
-
-    transform:
-        scale(1.05);
+    transform: scale(1.05);
 }
-
 
 /* =========================================================
    COPY BUTTON
 ========================================================= */
 
 .copy-btn {
-
     width: 100%;
-
     margin-top: 0.8rem;
-
     padding: 0.95rem 1rem;
-
     border: none;
-
     border-radius: 13px;
-
     color: white;
-
     font-size: 0.95rem;
-
     font-weight: 800;
-
     cursor: pointer;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     gap: 0.6rem;
-
-    transition:
-        all 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .crypto-copy {
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--primary),
-            var(--secondary)
-        );
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
 }
 
 .local-copy {
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--success),
-            #00a86b
-        );
+    background: linear-gradient(135deg, var(--success), #00a86b);
 }
 
 .copy-btn:hover {
-
-    transform:
-        translateY(-2px);
-
-    box-shadow:
-        0 10px 25px
-        rgba(0, 122, 255, 0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 122, 255, 0.25);
 }
 
 .local-copy:hover {
-
-    box-shadow:
-        0 10px 25px
-        rgba(52, 199, 89, 0.25);
+    box-shadow: 0 10px 25px rgba(52, 199, 89, 0.25);
 }
-
 
 /* =========================================================
    LOCAL DONATIONS
 ========================================================= */
 
 .local-section {
-
     margin-top: 2.5rem;
-
     padding-top: 1.5rem;
-
-    border-top:
-        1px solid var(--border);
+    border-top: 1px solid var(--border);
 }
 
 .local-card {
-
     padding: 1.3rem;
-
     margin-bottom: 1rem;
-
     border-radius: 20px;
-
-    background:
-        var(--background);
-
-    border:
-        1px solid var(--border);
-
-    transition:
-        transform 0.3s ease;
+    background: var(--background);
+    border: 1px solid var(--border);
+    transition: transform 0.3s ease;
 }
 
 .local-card:hover {
-
-    transform:
-        translateY(-3px);
+    transform: translateY(-3px);
 }
 
 .local-info {
-
     display: flex;
-
     align-items: center;
-
     gap: 0.9rem;
-
     margin-bottom: 0.9rem;
 }
 
 .local-logo {
-
     width: 45px;
     height: 45px;
-
     border-radius: 12px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     font-weight: 900;
-
     color: white;
-
     font-size: 0.9rem;
 }
 
 .jawwal-logo {
-
-    background:
-        linear-gradient(
-            135deg,
-            #0070c9,
-            #00a8ff
-        );
+    background: linear-gradient(135deg, #0070c9, #00a8ff);
 }
 
 .palpay-logo {
-
-    background:
-        linear-gradient(
-            135deg,
-            #0066a1,
-            #00a651
-        );
+    background: linear-gradient(135deg, #0066a1, #00a651);
 }
 
 .local-info h4 {
-
     margin: 0;
-
     font-size: 1.1rem;
 }
 
 .local-info span {
-
     display: block;
-
     margin-top: 0.2rem;
-
-    color:
-        var(--text-secondary);
-
+    color: var(--text-secondary);
     font-size: 0.85rem;
 }
-
 
 /* =========================================================
    LOCAL PHONE NUMBER
 ========================================================= */
 
 .local-number-box {
-
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
     gap: 1rem;
-
     padding: 0.9rem 1rem;
-
-    background:
-        var(--card-bg);
-
-    border:
-        1px solid var(--border);
-
+    background: var(--card-bg);
+    border: 1px solid var(--border);
     border-radius: 13px;
 }
 
 .local-number-box span {
-
-    font-family:
-        "Courier New",
-        monospace;
-
+    font-family: "Courier New", monospace;
     font-size: 1.05rem;
-
     font-weight: 800;
-
     letter-spacing: 1px;
 }
-
 
 /* =========================================================
    TRANSPARENCY NOTICE
 ========================================================= */
 
 .donation-transparency {
-
     display: flex;
-
     align-items: flex-start;
-
     gap: 0.9rem;
-
     margin-top: 1.5rem;
-
     padding: 1.1rem;
-
     border-radius: 16px;
-
-    background:
-        rgba(52, 199, 89, 0.08);
-
-    border:
-        1px solid
-        rgba(52, 199, 89, 0.18);
+    background: rgba(52, 199, 89, 0.08);
+    border: 1px solid rgba(52, 199, 89, 0.18);
 }
 
 .transparency-icon {
-
     font-size: 1.5rem;
-
     flex-shrink: 0;
 }
 
 .donation-transparency strong {
-
     display: block;
-
     margin-bottom: 0.3rem;
-
-    color:
-        var(--success);
+    color: var(--success);
 }
 
 .donation-transparency p {
-
     margin: 0;
-
-    color:
-        var(--text-secondary);
-
+    color: var(--text-secondary);
     font-size: 0.88rem;
-
     line-height: 1.6;
 }
-
 
 /* =========================================================
    THANK YOU
 ========================================================= */
 
 .donation-thanks {
-
     text-align: center;
-
     margin-top: 1.5rem;
-
     padding-top: 1.2rem;
-
-    border-top:
-        1px solid var(--border);
-
-    color:
-        var(--text-secondary);
-
+    border-top: 1px solid var(--border);
+    color: var(--text-secondary);
     font-size: 0.95rem;
-
     font-style: italic;
 }
 
 .donation-thanks span {
-
     margin: 0 0.25rem;
 }
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 600px) {
-
-    #donation-popup {
-        padding: 0.5rem;
-    }
-
-    .modal-content {
-
-        padding: 1.5rem;
-
-        border-radius: 24px;
-
-        max-height: 95vh;
-    }
-
-    .close-btn {
-
-        top: 10px;
-        right: 10px;
-
-        width: 42px;
-        height: 42px;
-
-        font-size: 1.7rem;
-    }
-
-    .donation-header {
-
-        padding:
-            1rem 0.5rem 1.5rem;
-    }
-
-    .donation-header h2 {
-
-        font-size: 1.8rem;
-    }
-
-    .donation-header p {
-
-        font-size: 0.9rem;
-    }
-
-    .section-title h3 {
-
-        font-size: 1.05rem;
-    }
-
-    .section-title p {
-
-        font-size: 0.78rem;
-    }
-
-    .crypto-card,
-    .local-card {
-
-        padding: 1rem;
-    }
-
-    .address-box {
-
-        align-items: flex-start;
-    }
-
-    .address-box code {
-
-        font-size: 0.72rem;
-    }
-
-    .copy-icon-btn {
-
-        width: 38px;
-        height: 38px;
-    }
-
-    .copy-btn {
-
-        font-size: 0.82rem;
-
-        padding: 0.85rem 0.7rem;
-    }
-
-    .donate-button {
-
-        padding: 1rem 1.2rem;
-
-        font-size: 13px;
-
-        border-top-left-radius: 20px;
-        border-bottom-left-radius: 20px;
-    }
-
-    .donation-transparency {
-
-        padding: 0.9rem;
-    }
-}
-
-
-/* =========================================================
-   SMALL PHONES
-========================================================= */
-
-@media (max-width: 380px) {
-
-    .modal-content {
-
-        padding: 1.2rem;
-    }
-
-    .donate-button {
-
-        padding: 0.85rem 1rem;
-
-        font-size: 11px;
-    }
-
-    .address-box code {
-
-        font-size: 0.67rem;
-    }
-}
-```
-
 
 /* ===== الفوتر المطور ===== */
 footer {
@@ -1564,7 +1066,7 @@ nav {
     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-        height: 90px;
+    height: 90px;
 }
 
 nav a {
@@ -1704,9 +1206,10 @@ nav a:hover i {
     opacity: 0.6;
 }
 
-/* ===== التجاوب مع الشاشات - تحسينات متقدمة ===== */
+/* =========================================================
+   MOBILE - RESPONSIVE
+========================================================= */
 
-/* اللاب توب والأجهزة المتوسطة (1024px - 1200px) */
 @media (max-width: 1200px) {
     .article-grid {
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -1725,17 +1228,9 @@ nav a:hover i {
     main {
         padding: 5rem 2.5rem;
     }
-    
-    .modal-content {
-        padding: 3rem;
-    }
 }
 
-/* الأجهزة اللوحية (768px - 1023px) */
 @media (max-width: 1023px) {
-    header {
-    }
-    
     .hero {
         height: 80vh;
         margin-top: 90px;
@@ -1768,19 +1263,8 @@ nav a:hover i {
     .image-card {
         padding: 2.5rem;
     }
-    
-    .donate-button {
-        padding: 1.8rem 2.2rem;
-        font-size: 1.3rem;
-    }
-    
-    .modal-content {
-        padding: 2.5rem;
-        border-radius: 30px;
-    }
 }
 
-/* الهواتف الكبيرة (481px - 767px) */
 @media (max-width: 767px) {
     header {
         padding: 1rem 1.5rem;
@@ -1792,7 +1276,7 @@ nav a:hover i {
     }
     
     header.scrolled {
-        padding: 0 0;
+        padding: 0.5rem 1rem;
         font-size: 18px;
         height: 60px;
     }
@@ -1860,11 +1344,17 @@ nav a:hover i {
         font-size: 1.5rem;
     }
     
+    /* ===== زر التبرع في الجوال ===== */
     .donate-button {
-        padding: 1.2rem 1.5rem;
-        font-size: 1.1rem;
-        border-top-left-radius: 25px;
-        border-bottom-left-radius: 25px;
+        right: 10px !important;
+        padding: 1.2rem 1.5rem !important;
+        font-size: 14px !important;
+        border-top-left-radius: 20px !important;
+        border-bottom-left-radius: 20px !important;
+    }
+    
+    .donate-button span {
+        display: none;
     }
     
     .theme-toggle {
@@ -1910,21 +1400,75 @@ nav a:hover i {
         padding: 2rem 1.5rem;
         border-radius: 25px;
     }
+}
+
+@media (max-width: 600px) {
+    #donation-popup {
+        padding: 0.5rem;
+    }
     
-    .address-section {
+    .modal-content {
         padding: 1.5rem;
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
+        border-radius: 24px;
+        max-height: 95vh;
+    }
+    
+    .close-btn {
+        top: 10px;
+        right: 10px;
+        width: 42px;
+        height: 42px;
+        font-size: 1.7rem;
+    }
+    
+    .donation-header {
+        padding: 1rem 0.5rem 1.5rem;
+    }
+    
+    .donation-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .donation-header p {
+        font-size: 0.9rem;
+    }
+    
+    .section-title h3 {
+        font-size: 1.05rem;
+    }
+    
+    .section-title p {
+        font-size: 0.78rem;
+    }
+    
+    .crypto-card,
+    .local-card {
+        padding: 1rem;
+    }
+    
+    .address-box {
+        align-items: flex-start;
+    }
+    
+    .address-box code {
+        font-size: 0.72rem;
+    }
+    
+    .copy-icon-btn {
+        width: 38px;
+        height: 38px;
     }
     
     .copy-btn {
-        padding: 1.2rem 2rem;
-        font-size: 1.1rem;
+        font-size: 0.82rem;
+        padding: 0.85rem 0.7rem;
+    }
+    
+    .donation-transparency {
+        padding: 0.9rem;
     }
 }
 
-/* الهواتف الصغيرة (320px - 480px) */
 @media (max-width: 480px) {
     header {
         padding: 0.8rem 1rem;
@@ -2007,15 +1551,13 @@ nav a:hover i {
         font-size: 0.9rem;
     }
     
+    /* ===== زر التبرع في الهواتف الصغيرة ===== */
     .donate-button {
-        padding: 1rem 1.2rem;
-        font-size: 1rem;
-        border-top-left-radius: 20px;
-        border-bottom-left-radius: 20px;
-    }
-    
-    .donate-button span {
-        display: none;
+        right: 8px !important;
+        padding: 1rem 1.2rem !important;
+        font-size: 12px !important;
+        border-top-left-radius: 18px !important;
+        border-bottom-left-radius: 18px !important;
     }
     
     .theme-toggle {
@@ -2058,38 +1600,27 @@ nav a:hover i {
         font-size: 1rem;
         margin: 1rem 0;
     }
-    
+}
+
+@media (max-width: 380px) {
     .modal-content {
-        padding: 1.5rem;
-        border-radius: 20px;
-        max-height: 85vh;
+        padding: 1.2rem;
     }
     
-    .close-btn {
-        top: 10px;
-        right: 15px;
-        width: 40px;
-        height: 40px;
-        font-size: 1.5rem;
+    .donate-button {
+        right: 6px !important;
+        padding: 0.85rem 1rem !important;
+        font-size: 10px !important;
     }
     
-    .copy-btn {
-        padding: 1rem 1.5rem;
-        font-size: 1rem;
-    }
-    
-    #usdt-address {
-        font-size: 0.9rem;
+    .address-box code {
+        font-size: 0.67rem;
     }
 }
 
 /* ===== تأثيرات خاصة للوضع الداكن ===== */
 .dark-mode .hero {
-    background: linear-gradient(135deg,
-            rgba(10, 132, 255, 0.8) 0%,
-            rgba(94, 92, 230, 0.6) 50%,
-            rgba(0, 0, 0, 0.9) 100%),
-        url('https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg') center/cover no-repeat;
+    background: linear-gradient(135deg, rgba(10, 132, 255, 0.8) 0%, rgba(94, 92, 230, 0.6) 50%, rgba(0, 0, 0, 0.9) 100%), url('https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg') center/cover no-repeat;
 }
 
 .dark-mode .image-container img {
@@ -2116,7 +1647,7 @@ nav a:hover i {
     }
     
     .donate-button:active {
-        transform: translateY(-50%) translateX(-8px) scale(1.05);
+        transform: translateY(-50%) scale(0.95) !important;
     }
     
     nav a:active {
@@ -2133,8 +1664,7 @@ nav a:hover i {
     }
     
     .hero::before,
-    .alert-banner::before,
-    .address-section::before {
+    .alert-banner::before {
         animation: none !important;
     }
 }
@@ -2168,12 +1698,11 @@ body {
     min-height: 100vh;
 }
 
-/* إزالة أي overflow: hidden قد يكون موجود */
 main, section, .hero {
     overflow: visible !important;
 }
 
-/* ===== تحسينات للشاشات الكبيرة جداً (4K وما فوق) ===== */
+/* ===== تحسينات للشاشات الكبيرة جداً (4K) ===== */
 @media (min-width: 2000px) {
     main {
         max-width: 1800px;
@@ -2229,7 +1758,3 @@ main, section, .hero {
         bottom: 70px;
     }
 }
-
-
-
-
