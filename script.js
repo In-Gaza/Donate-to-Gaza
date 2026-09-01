@@ -679,14 +679,6 @@ document.addEventListener(
             const windowHeight =
                 window.innerHeight;
 
-
-            /*
-             * لا نغير right أو transform هنا.
-             * CSS هو المسؤول عن تصميم الزر.
-             *
-             * نغير top فقط في الشاشات القصيرة.
-             */
-
             if (windowHeight < 600) {
 
                 donateButton.style.top = '70%';
